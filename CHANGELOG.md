@@ -3,7 +3,7 @@
 ## 2026-11-09 — Rebrand to Commonplace
 
 - Reframed the site as a **general blog** (the pool-hall guide is just issue 01, not the theme) and renamed it **Commonplace** across the site, manifest, icons, repo (`ptonline33/commonplace`) and Vercel project.
-- Live at https://commonplace-notes.vercel.app (the short `commonplace.vercel.app` was already taken); disabled deployment SSO protection for the public blog.
+- Live at https://commonplace-notes.vercel.app (the short `commonplace.vercel.app` was already taken); added it as a project-level production domain so every push updates it, and disabled deployment SSO protection for the public blog.
 - Replaced the pool-specific 8-ball identity with a neutral "C." monogram and editorial cover art (issue numerals + rules).
 - Replaced the Readalong dark-purple/tri-gradient look with a fresh **editorial light/dark theme**: warm paper or charcoal, a single oxide-red accent, Atkinson Hyperlegible for UI and Literata for display headings, thin rules and quiet cards.
 - Added a system-aware light/dark appearance toggle in the header (persisted); simplified the reader tools to font choice + text size.
