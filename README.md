@@ -1,6 +1,6 @@
 # Commonplace
 
-**Live:** [commonplace.vercel.app](https://commonplace.vercel.app) · **Source:** [github.com/ptonline33/commonplace](https://github.com/ptonline33/commonplace)
+**Live:** [commonplace-notes.vercel.app](https://commonplace-notes.vercel.app) · **Source:** [github.com/ptonline33/commonplace](https://github.com/ptonline33/commonplace)
 
 A small, offline-first **general blog PWA**. The journal has no niche: essays, field guides, city notes, how-tos and detours. Issue 01 happens to be a fully researched guide to the best pool halls in the Greater Toronto Area — that's a post, not the theme.
 
@@ -82,7 +82,7 @@ Until the tables exist the site is fully functional with bundled posts and local
 - Repository: `github.com/ptonline33/commonplace` (branch `main`).
 - Deployment: Vercel project `commonplace` in team `omarchy1`, static site + zero-config Node functions in `api/`.
 - The project is linked to the GitHub repo: every push to `main` deploys production automatically (this avoids the account's CLI email-OTP challenge on manual deploys).
-- Production aliases: `commonplace.vercel.app`, `commonplace-omarchy1.vercel.app`.
+- Production URLs: `commonplace-notes.vercel.app` (canonical) and the automatic `commonplace-omarchy1.vercel.app`. The short `commonplace.vercel.app` belongs to someone else, so the `*-notes` alias was added. Deployment SSO protection was disabled for this project so the public blog is reachable without a Vercel login.
 
 ## Content note
 
