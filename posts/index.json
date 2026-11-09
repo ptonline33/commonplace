@@ -1,8 +1,8 @@
 {
   "site": {
-    "title": "Chalk & Cue",
-    "tagline": "Field notes from the felt",
-    "description": "A field guide to the best pool halls in the Greater Toronto Area."
+    "title": "Commonplace",
+    "tagline": "A general journal",
+    "description": "Essays, field guides and notes from the GTA and beyond."
   },
   "posts": [
     {
@@ -14,7 +14,7 @@
       "author": "Andrew",
       "readMinutes": 12,
       "tags": ["Field Guide", "GTA", "Toronto", "Pool Halls"],
-      "accent": ["#ffb703", "#ff3d81"],
+      "accent": ["#b23a2b"],
       "file": "posts/best-pool-halls-gta.json",
       "published": true
     }

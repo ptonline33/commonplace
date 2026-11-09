@@ -1,7 +1,7 @@
-/* Chalk & Cue — a small offline-first blog PWA. */
+/* Commonplace — a small offline-first, general-purpose blog PWA. */
 "use strict";
 
-const CFG = window.CHALK_CONFIG || {};
+const CFG = window.COMMONPLACE_CONFIG || {};
 const API = (CFG.apiBase || "/api");
 const $ = (id) => document.getElementById(id);
 
@@ -13,17 +13,10 @@ const state = {
   tocIds: [],
   clapCount: 0,
   clapBusy: false,
-  prefs: { font: "atkinson", theme: "night", size: 1.0 }
+  prefs: { font: "atkinson", size: 1.0, theme: "system" }
 };
 
-const LINEUP = [
-  { name: "The Corner Bank", area: "Scarborough", color: "#ffb703" },
-  { name: "Le Spot", area: "Scarborough", color: "#ff3d81" },
-  { name: "Shoxs Billiard Lounge", area: "The Junction", color: "#3ee6ff" },
-  { name: "VIP Billiards", area: "College & Danforth", color: "#a97bff" },
-  { name: "The Crooked Cue", area: "Etobicoke / Mississauga", color: "#34c759" },
-  { name: "The Long Shot", area: "Oakville", color: "#ff8c42" }
-];
+const TOPICS = ["Field guides", "City notes", "Essays", "How-tos", "Reading lists", "Detours"];
 
 /* ------------------------------ helpers ------------------------------ */
 function esc(s) {
@@ -64,8 +57,12 @@ function fmtDate(iso) {
   const d = new Date(iso + "T12:00:00");
   return isNaN(d) ? iso : d.toLocaleDateString("en-CA", { year: "numeric", month: "long", day: "numeric" });
 }
-function store(key, val) { try { localStorage.setItem(key, val); } catch (_) {} }
-function read(key) { try { return localStorage.getItem(key); } catch (_) { return null; } }
+function store(key, val) { try { localStorage.setItem("commonplace:" + key, val); } catch (_) {} }
+function read(key) { try { return localStorage.getItem("commonplace:" + key); } catch (_) { return null; } }
+function accentOf(meta) {
+  const a = meta && meta.accent;
+  return (Array.isArray(a) ? a[0] : a) || "#b23a2b";
+}
 
 /* ------------------------------ block renderer ------------------------------ */
 function renderBlocks(blocks) {
@@ -135,7 +132,7 @@ function renderVenue(v) {
     ["Where", v.address], ["Hours", v.hours], ["Table rate", v.rate],
     ["Getting there", v.transit], ["Parking", v.parking], ["Best for", v.bestFor]
   ].filter((f) => f[1]);
-  return `<section class="venue" id="${esc(v.id || "")}" style="--v1:${esc(v.c1 || "#ffb703")};--v2:${esc(v.c2 || "#ff3d81")}">
+  return `<section class="venue" id="${esc(v.id || "")}" style="--v:${esc(v.c1 || "#b23a2b")}">
     <div class="venue-top">
       <div class="venue-num">${esc(v.num || "Stop")}</div>
       <h3>${esc(v.name)}</h3>
@@ -155,43 +152,40 @@ function renderVenue(v) {
 /* ------------------------------ home ------------------------------ */
 function renderHome() {
   const posts = state.catalog.filter((p) => p.published !== false);
-  $("postCount").textContent = posts.length + (posts.length === 1 ? " field guide" : " field guides");
+  $("postCount").textContent = posts.length + (posts.length === 1 ? " post" : " posts");
 
   const stats = [
-    { value: "7", label: "rooms mapped in guide 01" },
-    { value: "$10–33", label: "typical table rate / hour" },
-    { value: "11am–2am", label: "the GTA's playing window" },
-    { value: "35", label: "Diamond tables at Corner Bank" }
+    { value: "01", label: "post and counting" },
+    { value: "12 min", label: "the first read" },
+    { value: "0", label: "trackers or paywalls" },
+    { value: "100%", label: "offline ready" }
   ];
   $("statStrip").innerHTML = stats.map((s) => `<div class="stat"><b>${esc(s.value)}</b><span>${esc(s.label)}</span></div>`).join("");
 
   if (!posts.length) {
-    $("postGrid").innerHTML = '<p class="muted">No posts yet — check back after the next rack.</p>';
+    $("postGrid").innerHTML = '<p class="muted">No posts yet — check back soon.</p>';
   } else {
     $("postGrid").innerHTML = posts.map((p, i) => {
-      const c1 = (p.accent && p.accent[0]) || "#ffb703";
-      const c2 = (p.accent && p.accent[1]) || "#ff3d81";
-      return `<a class="post-card ${i === 0 ? "featured" : ""}" href="#/post/${esc(p.slug)}" style="--c1:${esc(c1)};--c2:${esc(c2)};--glow:${esc(c2)}">
-        <div class="card-cover">
-          <span class="cover-label">${esc(p.kicker || "Field guide")}</span>
-          <div class="cover-ball"><i>8</i></div>
-        </div>
+      const accent = accentOf(p);
+      const cover = `<div class="card-cover">
+          <span class="cover-label">Commonplace &middot; ${esc(p.kicker || "Journal")}</span>
+          <span class="cover-num">${String(i + 1).padStart(2, "0")}</span>
+          <span class="cover-lines"><i></i><i></i><i></i></span>
+        </div>`;
+      return `<a class="post-card ${i === 0 ? "featured" : ""}" href="#/post/${esc(p.slug)}" style="--post-accent:${esc(accent)}">
+        ${cover}
         <div class="card-body">
           <div class="meta"><span>${esc(fmtDate(p.date))}</span><span>&middot;</span><span>${esc(p.readMinutes || 8)} min read</span></div>
           <h3>${esc(p.title)}</h3>
           <p>${esc(p.dek)}</p>
           <div class="tags">${(p.tags || []).map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
-          <div class="card-cta">Read the guide &rarr;</div>
+          <div class="card-cta">Read the post &rarr;</div>
         </div>
       </a>`;
     }).join("");
   }
 
-  $("lineupGrid").innerHTML = LINEUP.map((v, i) => `
-    <div class="lineup-item" style="--lc:${esc(v.color)}">
-      <span class="lineup-num">${String(i + 1).padStart(2, "0")}</span>
-      <div><b>${esc(v.name)}</b><span>${esc(v.area)}</span></div>
-    </div>`).join("");
+  $("topicRow").innerHTML = TOPICS.map((t) => `<span class="topic">${esc(t)}</span>`).join("");
 }
 
 /* ------------------------------ article ------------------------------ */
@@ -206,24 +200,24 @@ async function getPostData(meta) {
 
 async function openPost(slug) {
   const meta = state.catalog.find((p) => p.slug === slug);
-  if (!meta) { toast("That guide isn't in the journal yet."); location.hash = "#/"; return; }
+  if (!meta) { toast("That post isn't in the journal yet."); location.hash = "#/"; return; }
   state.currentSlug = slug;
 
   const head = $("articleHead");
-  head.innerHTML = `<p class="kicker">${esc(meta.kicker || "Field guide")}</p>
+  head.innerHTML = `<p class="kicker">${esc(meta.kicker || "Journal")}</p>
     <h1>${esc(meta.title)}</h1>
     <p class="dek">${esc(meta.dek)}</p>
     <div class="byline"><span class="avatar">A</span>
       <span><strong>${esc(meta.author || "Andrew")}</strong> &middot; ${esc(fmtDate(meta.date))} &middot; ${esc(meta.readMinutes || 8)} min read</span>
     </div>`;
-  const c1 = (meta.accent && meta.accent[0]) || "#ffb703";
-  const c2 = (meta.accent && meta.accent[1]) || "#ff3d81";
-  const cover = $("articleCover");
-  cover.style.setProperty("--c1", c1);
-  cover.style.setProperty("--c2", c2);
-  cover.innerHTML = '<span class="cover-text">Field notes from the felt</span><div class="big-ball"><i>8</i></div>';
 
-  $("articleBody").innerHTML = '<p class="muted">Loading the guide&hellip;</p>';
+  const cover = $("articleCover");
+  cover.style.setProperty("--post-accent", accentOf(meta));
+  cover.innerHTML = `<span class="cover-text">Commonplace &middot; ${esc(meta.kicker || "Journal")}</span>
+    <span class="cover-num">01</span>
+    <span class="cover-lines"><i></i><i></i><i></i></span>`;
+
+  $("articleBody").innerHTML = '<p class="muted">Loading the post&hellip;</p>';
   try {
     const post = await getPostData(meta);
     $("articleBody").innerHTML = renderBlocks(post.blocks || post.body || []);
@@ -231,7 +225,7 @@ async function openPost(slug) {
     renderArticleFoot(meta);
     await loadClaps(slug);
   } catch (e) {
-    $("articleBody").innerHTML = '<p class="error">This guide could not be loaded. It may still be downloading for offline use &mdash; try again when you are back online.</p>';
+    $("articleBody").innerHTML = '<p class="error">This post could not be loaded. It may still be downloading for offline use — try again when you are back online.</p>';
   }
   window.scrollTo({ top: 0, behavior: "auto" });
   updateProgress();
@@ -258,14 +252,14 @@ function renderArticleFoot(meta) {
       <span class="muted" id="clapNote">Saved on this device &middot; synced when online</span>
     </div>
     <div class="article-nav">
-      <a class="pill" href="#/">&larr; All field guides</a>
+      <a class="pill" href="#/">&larr; All posts</a>
       <a class="pill" href="#/about">About the journal &rarr;</a>
     </div>`;
   $("clapBtn").addEventListener("click", () => clap(meta.slug));
 }
 
 async function loadClaps(slug) {
-  const local = Number(read("chalk:claps:" + slug) || 0);
+  const local = Number(read("claps:" + slug) || 0);
   state.clapCount = local;
   paintClaps();
   try {
@@ -280,18 +274,18 @@ function paintClaps() {
   const el = $("clapCount");
   if (el) el.textContent = `${state.clapCount} ${state.clapCount === 1 ? "clap" : "claps"}`;
   const btn = $("clapBtn");
-  if (btn && read("chalk:clapped:" + state.currentSlug)) {
+  if (btn && read("clapped:" + state.currentSlug)) {
     btn.textContent = "👏 Clapped — thanks!";
     btn.disabled = true;
   }
 }
 async function clap(slug) {
   if (state.clapBusy) return;
-  if (read("chalk:clapped:" + slug)) return;
+  if (read("clapped:" + slug)) return;
   state.clapBusy = true;
-  store("chalk:clapped:" + slug, "1");
-  const local = Number(read("chalk:claps:" + slug) || 0) + 1;
-  store("chalk:claps:" + slug, String(local));
+  store("clapped:" + slug, "1");
+  const local = Number(read("claps:" + slug) || 0) + 1;
+  store("claps:" + slug, String(local));
   state.clapCount = Math.max(state.clapCount + 1, local);
   paintClaps();
   toast("Thanks for the clap! 👏");
@@ -334,7 +328,6 @@ function updateProgress() {
   } else {
     bar.style.width = "0%";
   }
-  // TOC scroll spy
   if (!$("postView").hidden && state.tocIds.length) {
     let active = state.tocIds[0].id;
     for (const t of state.tocIds) {
@@ -345,23 +338,37 @@ function updateProgress() {
   }
 }
 
-/* ------------------------------ reader prefs ------------------------------ */
+/* ------------------------------ reader prefs + appearance ------------------------------ */
 const FONTS = {
   atkinson: '"Atkinson Hyperlegible", Arial, sans-serif',
   literata: '"Literata", Georgia, serif',
   lexend: '"Lexend", Arial, sans-serif',
   lora: '"Lora", Georgia, serif'
 };
+function resolvedTheme() {
+  if (state.prefs.theme === "light" || state.prefs.theme === "dark") return state.prefs.theme;
+  return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+function applyAppearance() {
+  const theme = resolvedTheme();
+  document.documentElement.setAttribute("data-theme", theme);
+  const btn = $("themeBtn");
+  if (btn) {
+    btn.textContent = theme === "dark" ? "☀" : "☾";
+    btn.setAttribute("aria-label", theme === "dark" ? "Switch to light appearance" : "Switch to dark appearance");
+  }
+  const color = theme === "dark" ? "#141518" : "#f7f5f0";
+  document.querySelectorAll('meta[name="theme-color"]').forEach((m) => m.setAttribute("content", color));
+}
 function applyPrefs() {
   document.documentElement.style.setProperty("--reader-font", FONTS[state.prefs.font] || FONTS.atkinson);
   document.documentElement.style.setProperty("--reader-size", (1.16 * state.prefs.size).toFixed(3) + "rem");
-  document.documentElement.setAttribute("data-read-theme", state.prefs.theme);
   $("fontSelect").value = state.prefs.font;
-  $("themeSelect").value = state.prefs.theme;
+  applyAppearance();
 }
-function savePrefs() { store("chalk:prefs", JSON.stringify(state.prefs)); }
+function savePrefs() { store("prefs", JSON.stringify(state.prefs)); }
 function loadPrefs() {
-  try { Object.assign(state.prefs, JSON.parse(read("chalk:prefs") || "{}")); } catch (_) {}
+  try { Object.assign(state.prefs, JSON.parse(read("prefs") || "{}")); } catch (_) {}
   applyPrefs();
 }
 
@@ -380,7 +387,7 @@ function router() {
   $("toc").hidden = true;
   document.querySelectorAll("[data-nav]").forEach((a) =>
     a.classList.toggle("active", a.dataset.nav === (isAbout ? "about" : "home")));
-  document.title = isPost ? "Field guide · Chalk & Cue" : (isAbout ? "About · Chalk & Cue" : "Chalk & Cue — a GTA pool hall journal");
+  document.title = isPost ? "Post · Commonplace" : (isAbout ? "About · Commonplace" : "Commonplace — a general journal");
   if (isPost) {
     openPost(postMatch[1]).then(() => {
       if (postMatch[2]) {
@@ -396,8 +403,18 @@ function router() {
 async function boot() {
   loadPrefs();
 
+  $("themeBtn").addEventListener("click", () => {
+    state.prefs.theme = resolvedTheme() === "dark" ? "light" : "dark";
+    applyAppearance();
+    savePrefs();
+  });
+  if (window.matchMedia) {
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    mq.addEventListener ? mq.addEventListener("change", () => { if (state.prefs.theme === "system") applyAppearance(); })
+                        : mq.addListener(() => { if (state.prefs.theme === "system") applyAppearance(); });
+  }
+
   $("fontSelect").addEventListener("change", (e) => { state.prefs.font = e.target.value; applyPrefs(); savePrefs(); });
-  $("themeSelect").addEventListener("change", (e) => { state.prefs.theme = e.target.value; applyPrefs(); savePrefs(); });
   $("smallerBtn").addEventListener("click", () => { state.prefs.size = Math.max(0.8, +(state.prefs.size - 0.1).toFixed(2)); applyPrefs(); savePrefs(); });
   $("biggerBtn").addEventListener("click", () => { state.prefs.size = Math.min(1.6, +(state.prefs.size + 0.1).toFixed(2)); applyPrefs(); savePrefs(); });
 
@@ -410,12 +427,11 @@ async function boot() {
     e.preventDefault();
     state.deferredPrompt = e;
     $("installBtn").hidden = false;
-    $("heroInstallBtn").textContent = "Install as app";
   });
   window.addEventListener("appinstalled", () => {
     state.deferredPrompt = null;
     $("installBtn").hidden = true;
-    toast("Installed — see you on the felt! 🎱");
+    toast("Installed — the journal is yours. ✳");
   });
 
   const offline = () => { $("offlineBadge").hidden = navigator.onLine; };
@@ -445,7 +461,7 @@ async function doInstall() {
   if (state.deferredPrompt) {
     state.deferredPrompt.prompt();
     const choice = await state.deferredPrompt.userChoice;
-    if (choice && choice.outcome === "accepted") toast("Installing Chalk & Cue…");
+    if (choice && choice.outcome === "accepted") toast("Installing Commonplace…");
     state.deferredPrompt = null;
     $("installBtn").hidden = true;
   } else {
@@ -455,7 +471,7 @@ async function doInstall() {
 
 async function sharePost() {
   const url = location.href;
-  const data = { title: document.title, text: "A field guide to the best pool halls in the GTA", url };
+  const data = { title: document.title, text: "A post from Commonplace", url };
   try {
     if (navigator.share) { await navigator.share(data); return; }
     await navigator.clipboard.writeText(url);

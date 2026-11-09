@@ -1,22 +1,29 @@
-# Chalk & Cue
+# Commonplace
 
-**Live:** [chalk-and-cue.vercel.app](https://chalk-and-cue.vercel.app) · **Source:** [github.com/ptonline33/chalk-and-cue](https://github.com/ptonline33/chalk-and-cue)
+**Live:** [commonplace.vercel.app](https://commonplace.vercel.app) · **Source:** [github.com/ptonline33/commonplace](https://github.com/ptonline33/commonplace)
 
-A small, offline-first **blog PWA** about playing pool in the Greater Toronto Area. Issue 01 is a full field guide to seven GTA pool halls — addresses, hours, table rates, transit, etiquette and three buildable pool crawls.
+A small, offline-first **general blog PWA**. The journal has no niche: essays, field guides, city notes, how-tos and detours. Issue 01 happens to be a fully researched guide to the best pool halls in the Greater Toronto Area — that's a post, not the theme.
 
-The visual language is lifted from the **Readalong** project: self-hosted **Atkinson Hyperlegible**, a `#0b0820` indigo base, yellow → pink → cyan gradients, pill buttons, glassy sticky header and soft glows — with a modern editorial layout on top.
+## Visual language
+
+A fresh editorial light/dark theme with a single oxide-red accent:
+
+- **Light** warm paper `#f7f5f0` / ink `#1b1c20`; **dark** charcoal `#141518` / cream `#f5f3ee`.
+- One accent colour (`#b23a2b` light, `#f08068` dark) used for links, rules, buttons and active states.
+- **Atkinson Hyperlegible** for UI + **Literata** for display headings, with Lexend/Lora as reader options. All fonts are self-hosted `.woff2` files from the Readalong project, so the PWA works with no network.
+- Follows the OS light/dark preference, with a manual toggle in the header that persists.
 
 ## What's inside
 
 ```
 index.html               app shell (hash router: #/, #/post/:slug, #/about)
-styles.css               Readalong theme + editorial article styles
-app.js                   router, block renderer, reader prefs, claps, install prompt
+styles.css               editorial light/dark theme
+app.js                   router, block renderer, appearance + reader prefs, claps, install
 config.js                public Supabase URL/anon key (safe to ship)
-manifest.webmanifest     install metadata + shortcut to the field guide
-sw.js                    offline-first service worker (precaches the whole guide)
+manifest.webmanifest     install metadata + shortcut to the first post
+sw.js                    offline-first service worker (precaches the whole journal)
 fonts/                   Atkinson, Literata, Lexend, Lora (woff2, from Readalong)
-icons/                   192 / 512 / maskable / apple-touch (generated)
+icons/                   192 / 512 / maskable / apple-touch (generated C monogram)
 posts/index.json         post catalog (metadata)
 posts/*.json             post bodies as typed content blocks
 supabase/schema.sql      blog_posts + blog_reactions tables with RLS
@@ -31,7 +38,7 @@ tools/make-icons.py      dependency-free PNG icon generator
 No build step, no dependencies:
 
 ```bash
-cd chalk-and-cue
+cd commonplace
 python3 -m http.server 8080
 # open http://localhost:8080
 ```
@@ -43,14 +50,14 @@ The `/api/*` routes only exist on Vercel. Locally the app uses the bundled posts
 - Installable (`beforeinstallprompt` + manifest shortcuts), standalone display.
 - Full offline support: the shell, fonts, icons, catalog and all post JSON are precached on install; navigation falls back to `index.html` when offline.
 - Network-first shell so new posts appear without a hard refresh; `/api/*` is network-only so cloud data never goes stale.
-- Reader controls like Readalong: font family (Atkinson / Literata / Lexend / Lora), reading theme (night / sepia / light / high contrast), and A− / A+ text size. Preferences persist.
+- Reader controls: font family (Atkinson / Literata / Lexend / Lora) and A− / A+ text size, all persisted. Appearance (system / light / dark) is controlled from the header.
 - Reading progress bar, sticky table of contents with scroll spy, clap reactions, share, offline badge.
-- Shareable deep links into a guide: `#/post/<slug>/<section-id>` (e.g. `#/post/best-pool-halls-gta/corner-bank`).
+- Shareable deep links into a post: `#/post/<slug>/<section-id>` (e.g. `#/post/best-pool-halls-gta/corner-bank`).
 
 ## Adding a post
 
 1. Create `posts/<slug>.json` with a `blocks` array. Supported block types: `h2` (with `id`), `h3`, `lead`, `p`, `ul`, `ol`, `checklist`, `quote`, `callout`, `divider`, `stats`, `route`, `venue`, `sources`. Inline text supports `**bold**`, `*em*`, `` `code` `` and `[label](url)`.
-2. Add an entry to `posts/index.json`.
+2. Add an entry to `posts/index.json` (`accent` is an array with one colour).
 3. Add the new file to the `SHELL` array in `sw.js` and bump `VERSION` so it works offline immediately.
 
 Or, once Supabase is connected, insert a row into `blog_posts` with the full block array in `body` (no repo file and no redeploy needed). The client merges cloud posts over the bundled catalog.
@@ -66,21 +73,17 @@ The project is wired to the Supabase project whose public URL/anon key is in `co
    - `SUPABASE_URL` = `https://<project-ref>.supabase.co`
    - `SUPABASE_ANON_KEY` = the anon/publishable key
    - (optional) `SUPABASE_SERVICE_ROLE_KEY`
-5. Redeploy. `/api/health` isn't needed — `/api/posts` returns `{"ok":true,"source":"supabase",...}` once connected, and `{"ok":false,"source":"unconfigured"}` otherwise.
+5. Redeploy. `/api/posts` returns `{"ok":true,"source":"supabase",...}` once connected, and `{"ok":false,"source":"unconfigured"}` otherwise.
 
 Until the tables exist the site is fully functional with bundled posts and local claps.
 
 ## GitHub + Vercel
 
-- Repository: `github.com/ptonline33/chalk-and-cue` (branch `main`).
-- Deployment: Vercel project `chalk-and-cue` in team `omarchy1`, static site + zero-config Node functions in `api/`.
+- Repository: `github.com/ptonline33/commonplace` (branch `main`).
+- Deployment: Vercel project `commonplace` in team `omarchy1`, static site + zero-config Node functions in `api/`.
 - The project is linked to the GitHub repo: every push to `main` deploys production automatically (this avoids the account's CLI email-OTP challenge on manual deploys).
-- Production aliases: `chalk-and-cue.vercel.app`, `chalk-and-cue-omarchy1.vercel.app`.
+- Production aliases: `commonplace.vercel.app`, `commonplace-omarchy1.vercel.app`.
 
 ## Content note
 
-Venue hours, rates and addresses were researched from the rooms' own websites and published listings in November 2026 (sources are listed at the bottom of the guide). **They change.** Call ahead before a long trip — the guide says so too.
-
-## Fonts
-
-Atkinson Hyperlegible, Literata, Lexend and Lora `.woff2` files are self-hosted from the Readalong project so the PWA has no external font dependency and works offline.
+Venue hours, rates and addresses in issue 01 were researched from the rooms' own websites and published listings in November 2026 (sources are listed at the bottom of the guide). **They change.** Call ahead before a long trip — the guide says so too.

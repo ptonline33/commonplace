@@ -1,34 +1,35 @@
 <!doctype html>
-<html lang="en" data-read-theme="night">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Chalk &amp; Cue — a GTA pool hall journal</title>
-  <meta name="description" content="Field notes from the felt: where to play pool in the Greater Toronto Area, with addresses, rates, hours and the unwritten rules.">
-  <meta name="theme-color" content="#0b0820">
+  <title>Commonplace — a general journal</title>
+  <meta name="description" content="Essays, field guides and notes from the GTA and beyond. A general journal that works offline.">
+  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141518" media="(prefers-color-scheme: dark)">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Chalk &amp; Cue">
-  <meta property="og:description" content="A field guide to the best pool halls in the GTA.">
+  <meta property="og:title" content="Commonplace">
+  <meta property="og:description" content="A general journal: essays, field guides and notes. Works offline.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon-192.png" type="image/png">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="bg-glow" aria-hidden="true"></div>
   <div id="readingProgress" class="reading-progress" aria-hidden="true"><span></span></div>
 
   <header class="topbar">
     <button id="backBtn" class="pill" type="button" hidden>&larr; Home</button>
-    <a class="brand" href="#/">Chalk <span class="brand-amp">&amp;</span> Cue</a>
+    <a class="brand" href="#/">Commonplace</a>
     <nav class="main-nav" aria-label="Main">
       <a class="nav-link" href="#/" data-nav="home">Journal</a>
       <a class="nav-link" href="#/about" data-nav="about">About</a>
     </nav>
     <div class="top-actions">
+      <button id="themeBtn" class="pill theme-btn" type="button" aria-label="Toggle light and dark appearance" title="Toggle appearance">◐</button>
       <button id="installBtn" class="pill install-btn" type="button" hidden>Install app</button>
       <div class="tools" id="readerTools" hidden>
         <label class="pick"><span class="sr-only">Reading font</span>
@@ -37,14 +38,6 @@
             <option value="literata">Literata (book serif)</option>
             <option value="lexend">Lexend</option>
             <option value="lora">Lora (serif)</option>
-          </select>
-        </label>
-        <label class="pick"><span class="sr-only">Reading theme</span>
-          <select id="themeSelect" aria-label="Reading theme">
-            <option value="night">Night</option>
-            <option value="sepia">Sepia</option>
-            <option value="light">Light</option>
-            <option value="contrast">High contrast</option>
           </select>
         </label>
         <button id="smallerBtn" class="pill size-btn" type="button" aria-label="Smaller text">A&minus;</button>
@@ -58,11 +51,11 @@
     <!-- ---------- HOME ---------- -->
     <section id="homeView" class="view">
       <div class="hero">
-        <p class="eyebrow"><span class="dot"></span> A journal from the felt</p>
-        <h1>Rack &rsquo;em up.<br><span class="grad">Read along.</span></h1>
-        <p class="hero-sub">Honest field notes on the best pool halls in the Greater Toronto Area &mdash; where to go, what it costs, how to get in, and the little things nobody tells you before the break.</p>
+        <p class="eyebrow"><span class="dot"></span> A general journal</p>
+        <h1>A place for everything <span class="accent-word">worth writing down.</span></h1>
+        <p class="hero-sub">Essays, field guides, city notes and the occasional long read. No fixed beat, no niche &mdash; just things worth putting into words. First up: a practical guide to the best pool halls in the GTA.</p>
         <div class="hero-actions">
-          <a class="btn-go" href="#/post/best-pool-halls-gta">Read the first field guide <span aria-hidden="true">&rarr;</span></a>
+          <a class="btn-go" href="#/post/best-pool-halls-gta">Read the first post <span aria-hidden="true">&rarr;</span></a>
           <button id="heroInstallBtn" class="pill" type="button">Install as app</button>
         </div>
       </div>
@@ -81,22 +74,23 @@
         <p class="muted">Loading the journal&hellip;</p>
       </div>
 
-      <div class="lineup" id="lineup">
+      <div class="topics">
         <div class="section-head">
           <div>
-            <p class="kicker">Inside the guide</p>
-            <h2>The rooms on the list</h2>
+            <p class="kicker">No fixed beat</p>
+            <h2>What goes here</h2>
           </div>
-          <span class="muted">Scarborough &rarr; Oakville</span>
+          <span class="muted">Open to anything</span>
         </div>
-        <div class="lineup-grid" id="lineupGrid"></div>
+        <div class="topic-row" id="topicRow"></div>
+        <p class="topic-note">The journal starts with one field guide and grows from there &mdash; city notes, how-tos, essays, reading lists and the odd detour.</p>
       </div>
 
       <div class="about-strip">
         <div>
           <p class="kicker">Why this exists</p>
-          <h2>A city full of good tables, and no good map.</h2>
-          <p class="muted">Toronto has produced Canadian champions and world champions. Its pool rooms are scattered from Sheppard to the QEW, each with its own rules, rates and rhythm. Chalk &amp; Cue is a slow, practical guide to all of it &mdash; one rack at a time.</p>
+          <h2>Not every blog needs a niche.</h2>
+          <p class="muted">A commonplace book is where you keep anything worth returning to. This is that, on the web: researched guides, small observations and longer reads, published one at a time. It installs on your phone and works with no signal.</p>
         </div>
         <a class="pill" href="#/about">More about the journal &rarr;</a>
       </div>
@@ -119,29 +113,29 @@
     <section id="aboutView" class="view" hidden>
       <div class="prose-card">
         <p class="eyebrow"><span class="dot"></span> About the journal</p>
-        <h1>Small rooms, long nights, <span class="grad">good chalk.</span></h1>
-        <p class="lead">Chalk &amp; Cue is a small independent blog about playing pool around the Greater Toronto Area. Every guide is researched from the venues&rsquo; own published hours and rates, then walked through in plain language: how to get there, what it costs, when to show up, and what to expect when you walk in.</p>
+        <h1>A notebook with <span class="accent-word">no assigned subject.</span></h1>
+        <p class="lead">Commonplace is a small independent blog for anything worth writing down. The first post happens to be a field guide to pool halls in the Greater Toronto Area, but the journal itself is deliberately general: essays, city notes, how-tos, reading lists and detours.</p>
         <h2>What you&rsquo;ll find here</h2>
         <ul>
-          <li><strong>Field guides</strong> with addresses, hours, table rates and transit notes for real rooms.</li>
-          <li><strong>Practical detail</strong> &mdash; reservations, 7ft vs 9ft tables, house rules and etiquette.</li>
-          <li><strong>Routes</strong> for turning two or three stops into a proper pool crawl.</li>
-          <li><strong>Honest caveats</strong>: rates and hours change. Call ahead before you make the trip.</li>
+          <li><strong>Researched guides</strong> with real addresses, hours, rates and practical detail.</li>
+          <li><strong>Plain-language notes</strong> on how things work, from table etiquette to transit routes.</li>
+          <li><strong>Essays and reading lists</strong> whenever the mood strikes.</li>
+          <li><strong>Honest caveats</strong> &mdash; a source list and a reminder that details change.</li>
         </ul>
         <h2>Built as a PWA</h2>
-        <p>This journal installs on your phone or desktop, works offline, and keeps your reading font, theme and text size. Posts ship with the app so the whole guide is available on the subway with no signal.</p>
+        <p>The journal installs on your phone or desktop, works offline, follows your system light/dark preference, and remembers your reading font and text size. Posts ship with the app, so the whole thing is available on the subway with no signal.</p>
         <div class="tech-row">
           <span class="chip">GitHub</span><span class="chip">Vercel</span><span class="chip">Supabase</span>
-          <span class="chip">Atkinson Hyperlegible</span><span class="chip">Offline first</span>
+          <span class="chip">Atkinson Hyperlegible</span><span class="chip">Literata</span><span class="chip">Offline first</span>
         </div>
-        <p class="muted small">Posts live as JSON in the repository. When connected, published posts and reader claps are synced through Supabase, with a local cache so nothing breaks when you&rsquo;re offline.</p>
+        <p class="muted small">Posts live as JSON in the repository. When connected, published posts and reader claps sync through Supabase, with a local cache so nothing breaks when you&rsquo;re offline.</p>
         <a class="btn-go" href="#/">&larr; Back to the journal</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <span>Chalk &amp; Cue &middot; Field notes from the GTA</span>
+    <span>Commonplace &middot; a general journal</span>
     <span id="offlineBadge" class="offline-badge" hidden>Offline &mdash; reading from cache</span>
     <span class="footer-links"><a href="#/">Journal</a> &middot; <a href="#/about">About</a></span>
   </footer>

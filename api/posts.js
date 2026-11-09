@@ -33,7 +33,7 @@ module.exports = async (req, res) => {
       date: row.date,
       readMinutes: row.read_minutes || 8,
       tags: row.tags || [],
-      accent: row.accent || ["#ffb703", "#ff3d81"],
+      accent: row.accent || ["#b23a2b"],
       file: row.file || undefined,
       body: row.body || undefined,
       published: true

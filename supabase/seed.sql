@@ -15,7 +15,7 @@ values
     '2026-11-09',
     12,
     array['Field Guide', 'GTA', 'Toronto', 'Pool Halls']::text[],
-    array['#ffb703', '#ff3d81']::text[],
+    array['#b23a2b']::text[],
     'posts/best-pool-halls-gta.json',
     true
   )

@@ -1,4 +1,4 @@
-/* Chalk & Cue service worker.
+/* Commonplace service worker.
  *  - App shell + post JSON: precached at install so the whole journal works
  *    offline from the very first launch (no signal needed on the subway).
  *  - Navigation + same-origin assets: network-first so new posts show up,
@@ -6,7 +6,7 @@
  *  - /api/*: network-only. Cloud posts and claps are live data and should
  *    never be served from a stale cache.
  */
-const VERSION = "chalk-and-cue-v1";
+const VERSION = "commonplace-v1";
 const SHELL = [
   "./",
   "index.html",
