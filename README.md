@@ -1,5 +1,7 @@
 # Chalk & Cue
 
+**Live:** [chalk-and-cue.vercel.app](https://chalk-and-cue.vercel.app) · **Source:** [github.com/ptonline33/chalk-and-cue](https://github.com/ptonline33/chalk-and-cue)
+
 A small, offline-first **blog PWA** about playing pool in the Greater Toronto Area. Issue 01 is a full field guide to seven GTA pool halls — addresses, hours, table rates, transit, etiquette and three buildable pool crawls.
 
 The visual language is lifted from the **Readalong** project: self-hosted **Atkinson Hyperlegible**, a `#0b0820` indigo base, yellow → pink → cyan gradients, pill buttons, glassy sticky header and soft glows — with a modern editorial layout on top.
@@ -70,9 +72,10 @@ Until the tables exist the site is fully functional with bundled posts and local
 
 ## GitHub + Vercel
 
-- Repository: `github.com/ptonline33/chalk-and-cue`
-- Deployment: Vercel (team `omarchy1`), static site + zero-config Node functions in `api/`.
-- Deploy manually with `vercel --prod`, or connect the GitHub repo for automatic deploys on push.
+- Repository: `github.com/ptonline33/chalk-and-cue` (branch `main`).
+- Deployment: Vercel project `chalk-and-cue` in team `omarchy1`, static site + zero-config Node functions in `api/`.
+- The project is linked to the GitHub repo: every push to `main` deploys production automatically (this avoids the account's CLI email-OTP challenge on manual deploys).
+- Production aliases: `chalk-and-cue.vercel.app`, `chalk-and-cue-omarchy1.vercel.app`.
 
 ## Content note
 

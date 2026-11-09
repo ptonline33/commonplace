@@ -7,4 +7,6 @@
 - Added install prompt, manifest shortcuts, generated icons, service worker with full offline precache, reading progress, sticky TOC with scroll spy.
 - Added reader controls: font family, reading theme (night / sepia / light / contrast) and text size, all persisted.
 - Added Supabase integration: `blog_posts` + `blog_reactions` schema with RLS, optional seed, Vercel serverless `/api/posts` and `/api/reactions` proxies, clap reactions with localStorage fallback.
-- Created the GitHub repo and Vercel production deployment.
+- Added shareable section deep links (`#/post/<slug>/<section-id>`).
+- Created the GitHub repo (`ptonline33/chalk-and-cue`, branch `main`) and linked it to the Vercel project for automatic production deploys: https://chalk-and-cue.vercel.app
+- Set `SUPABASE_URL` and `SUPABASE_ANON_KEY` Vercel environment variables; serverless routes degrade gracefully until `supabase/schema.sql` is run in the Supabase SQL Editor.
