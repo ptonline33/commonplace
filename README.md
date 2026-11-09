@@ -43,6 +43,7 @@ The `/api/*` routes only exist on Vercel. Locally the app uses the bundled posts
 - Network-first shell so new posts appear without a hard refresh; `/api/*` is network-only so cloud data never goes stale.
 - Reader controls like Readalong: font family (Atkinson / Literata / Lexend / Lora), reading theme (night / sepia / light / high contrast), and A− / A+ text size. Preferences persist.
 - Reading progress bar, sticky table of contents with scroll spy, clap reactions, share, offline badge.
+- Shareable deep links into a guide: `#/post/<slug>/<section-id>` (e.g. `#/post/best-pool-halls-gta/corner-bank`).
 
 ## Adding a post
 
