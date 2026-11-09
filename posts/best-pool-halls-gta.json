@@ -1,0 +1,384 @@
+{
+  "slug": "best-pool-halls-gta",
+  "title": "Chalk, Cue & the 401: A Field Guide to the Best Pool Halls in the GTA",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "Toronto is quietly one of the best pool cities in North America. It has produced Canadian champions and world champions, and its rooms are scattered from Sheppard Avenue down to the QEW - each with its own tables, its own rates and its own rhythm. This is a practical guide to all of it: **where** to go, **how** to get in, and the details that make the difference between a good night and a wasted trip."
+    },
+    {
+      "type": "p",
+      "text": "I wrote this because the information is everywhere and nowhere. A room's hours live on its website, its rates live on a FAQ page, its vibe lives in a three-year-old Reddit thread, and whether you need a reservation lives nowhere at all. So here is the whole picture in one place, researched from the venues' own published details as of late 2026."
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "icon": "!",
+      "title": "Call before you commit",
+      "text": "Hours, table rates and food menus change. Everything below comes from the rooms' own sites and published listings, but a 30-second phone call before a long drive is always worth it - especially on holidays, tournament nights and long weekends."
+    },
+    {
+      "type": "h2",
+      "id": "how-it-works",
+      "text": "How pool halls in the GTA actually work"
+    },
+    {
+      "type": "p",
+      "text": "First, the mental model. A GTA pool room is usually one of two things: a **dedicated billiards hall** (lots of tables, serious players, cheap daytime rates) or a **billiards lounge / sports bar** (fewer tables, better food, more atmosphere, higher hourly rate). Both are good. They just serve different nights."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "**Table time is billed by the hour, per table - not per person.** Two people splitting $25/hour is $12.50 each. A four-person group is cheaper again.",
+        "**7ft vs 9ft matters.** Bar-size 7-foot tables are forgiving and fun. 9-foot tables with tight pockets are where serious players practise. The Corner Bank has both; ask for a 9-footer if you want to be humbled.",
+        "**Equipment is normally included.** Cues, chalk, a rack and a bridge are house gear. Bring your own cue only if you have one - plenty of regulars do.",
+        "**Daytime is cheap and empty.** Weekday afternoons are the best-kept secret in the city. The Crooked Cue literally halves its rate before 6 p.m., and Le Spot runs a daily flat rate.",
+        "**Evenings are social.** After 8 p.m. on Fridays and Saturdays, expect a wait, a louder room and a minimum-age door at some lounges. Bring ID."
+      ]
+    },
+    {
+      "type": "stats",
+      "items": [
+        { "value": "$10-33", "label": "table rate per hour, city-wide" },
+        { "value": "$25", "label": "the typical hourly rate" },
+        { "value": "11am-2am", "label": "the usual playing window" },
+        { "value": "35", "label": "Diamond tables at one Scarborough room" }
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "What good felt feels like"
+    },
+    {
+      "type": "p",
+      "text": "If you have only played on a worn bar table, a freshly clothed 9-footer is a revelation: the cue ball travels further with less effort, and the pockets punish anything loose. The Crooked Cue uses Simonis #860 tournament wool on Canadian-made Dufferin tables; The Corner Bank runs Diamond Pro-Ams in both 7ft rosewood and 9ft charcoal finishes. Those two rooms are where you go when the equipment itself is part of the point."
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "icon": "✓",
+      "title": "The cheapest hour in the GTA",
+      "text": "Before 6 p.m., The Crooked Cue charges **half price** on pool tables every day. Le Spot advertises a daily flat rate around $10. If you want maximum table time for minimum money, go early on a weekday."
+    },
+    {
+      "type": "h2",
+      "id": "getting-in",
+      "text": "How to get in: reservations, timing, what to bring"
+    },
+    {
+      "type": "p",
+      "text": "This is the part that trips up first-timers. Reservations are inconsistent across the city, and showing up at 9 p.m. on a Saturday without a plan is a good way to spend forty minutes holding a pint."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "**No reservations at all:** Shoxs. Walk in, add your name, eat while you wait.",
+        "**First come, first served tables:** The Crooked Cue (reserve a *dining* table, not a pool table) and The Long Shot (walk-ins welcome; book a slot for groups).",
+        "**Walk-in after 8 p.m. Fri/Sat:** VIP Billiards. Party bookings are for groups of 15 or more.",
+        "**Leagues and tournaments:** The Corner Bank. Check the calendar - a tournament night can fill a room with players who are there to compete, not to teach.",
+        "**Ask for the flat rate:** Le Spot. Say it at the desk when you arrive."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Bring photo ID, a light layer (rooms run cool), comfortable shoes and your phone for maps. Most places take cards, but a little cash is handy for tips and older coin-op tables. If you own a cue, bring it; if you don't, the house cues are fine - just check the tip and give it a quick chalk before you break."
+    },
+    {
+      "type": "h2",
+      "id": "the-rooms",
+      "text": "The rooms: where to play, with the details"
+    },
+    {
+      "type": "p",
+      "text": "Six rooms worth building a night around, roughly east to west. Each card has the address, hours, rate, how to get there and the one thing to know before you walk in."
+    },
+    {
+      "type": "venue",
+      "id": "corner-bank",
+      "num": "01 / Scarborough",
+      "name": "The Corner Bank",
+      "area": "925 Warden Ave, Scarborough",
+      "badge": "Serious play",
+      "c1": "#ffb703",
+      "c2": "#e8860c",
+      "vibe": "Almost 20,000 sq. ft. of indoor space plus a 3,000 sq. ft. patio, with **35 Diamond pool tables** - 7ft rosewood Pro-Ams and 9ft charcoal Pro-Ams with tournament-tight pockets. Tables are spaced so you never bump the player next to you. Leagues and tournaments run regularly, and it is the room local players name first when you ask where the good felt is.",
+      "address": "925 Warden Ave., Scarborough, ON M1L 4C5",
+      "hours": "11am - 2am, every day",
+      "rate": "Walk-in table time; ask the desk for current hourly and day rates",
+      "transit": "Warden Ave near Eglinton; easiest by car or rideshare from Warden station (Line 2)",
+      "parking": "On-site lot",
+      "bestFor": "Practice, 9-foot tables, leagues, watching very good players",
+      "tip": "Arrive right at 11am on a weekday and you will have your pick of tables. If you are a beginner, watch a rack from the raised seating before you put your name in - it is the best free lesson in the city.",
+      "links": [
+        { "label": "Map", "url": "https://maps.google.ca/maps?q=925+Warden+Ave,+Scarborough,+ON" },
+        { "label": "Website", "url": "https://www.thecornerbank.ca/" },
+        { "label": "(416) 757-2265", "url": "tel:4167572265" }
+      ]
+    },
+    {
+      "type": "venue",
+      "id": "le-spot",
+      "num": "02 / Scarborough",
+      "name": "Le Spot Billiard Lounge",
+      "area": "4531 Sheppard Ave E, Scarborough",
+      "badge": "Champion's room",
+      "c1": "#ff3d81",
+      "c2": "#9b2bff",
+      "vibe": "Established in 1978 and Filipino-owned, Le Spot is the relaxed home room of **Alex 'The Lion' Pagulayan**, the 2004 world pool champion. Cues are well maintained, the staff are warm, and the kitchen does wings with a house hot sauce. It is the rare room where a first-timer and a pro can both feel at home - and the value is unmatched.",
+      "address": "4531 Sheppard Ave E, 2nd Fl., Scarborough, ON M1S 1V3",
+      "hours": "Roughly noon - 1am daily (call to confirm)",
+      "rate": "Daily flat rate around $10, or about $10.50/hour - prices subject to change",
+      "transit": "Sheppard & McCowan area, just off Hwy 401; short drive from Agincourt GO",
+      "parking": "Plaza parking",
+      "bestFor": "Long cheap sessions, solo practice, Filipino food, spotting a world champion",
+      "tip": "It is a second-floor room - look for the stairwell signage in the plaza. Ask for the flat rate at the desk, then settle in. If you see a crowd around one table, that is probably why.",
+      "links": [
+        { "label": "Map", "url": "https://maps.google.ca/maps?q=4531+Sheppard+Ave+E,+Scarborough,+ON" },
+        { "label": "Website", "url": "https://lespotbilliard.com/" },
+        { "label": "(416) 298-2888", "url": "tel:4162982888" }
+      ]
+    },
+    {
+      "type": "venue",
+      "id": "shoxs",
+      "num": "03 / The Junction",
+      "name": "Shoxs Billiard Lounge",
+      "area": "2827 Dundas St W, Toronto",
+      "badge": "Neighbourhood",
+      "c1": "#3ee6ff",
+      "c2": "#2b6bff",
+      "vibe": "A Junction institution on Dundas West: TVs by every table, a full food menu, and late hours that make it the natural last stop of the night. It is a room with a regular crowd and a proper bar feel - less cathedral of pool, more your favourite local.",
+      "address": "2827 Dundas St W, Toronto, ON M6P 1Y6",
+      "hours": "Mon-Thu 4pm-12am; Fri & Sat noon-2am; Sun noon-12am (late service to 2am)",
+      "rate": "Walk-in hourly tables; ask at the bar",
+      "transit": "Dundas West station (Line 2) and the Junction buses; bike-friendly",
+      "parking": "Street parking on Dundas and side streets",
+      "bestFor": "Date nights, groups, late racks, dinner and pool in one stop",
+      "tip": "**No reservations - at all.** Fridays after 8 p.m. fill up, so arrive early or be happy to wait with food. It is the easiest room in this guide to reach without a car.",
+      "links": [
+        { "label": "Map", "url": "https://maps.google.ca/maps?q=2827+Dundas+St+W,+Toronto,+ON" },
+        { "label": "Website", "url": "https://shoxs.ca/" },
+        { "label": "(416) 762-7097", "url": "tel:4167627097" }
+      ]
+    },
+    {
+      "type": "venue",
+      "id": "vip-billiards",
+      "num": "04 / College & Danforth",
+      "name": "VIP Billiards & Lounge",
+      "area": "Two Toronto locations",
+      "badge": "Groups & first-timers",
+      "c1": "#a97bff",
+      "c2": "#ff3d81",
+      "vibe": "The social option: pool plus foosball, arcade games, board games, a sports bar, stone-oven pizza and wings. Both rooms are big, bright and built for a group that wants more than one thing to do. Same rate, same hours, two completely different neighbourhoods.",
+      "address": "842 College St, Toronto (M6H 1A2) - and 485 Danforth Ave, Toronto (M4K 1P5)",
+      "hours": "4pm - 2am, every day, both locations",
+      "rate": "$25/hour per table at both locations (per the venue FAQ)",
+      "transit": "College: 506 streetcar. Danforth: Line 2 subway plus a short walk",
+      "parking": "Paid street / Green P nearby - the TTC is easier",
+      "bestFor": "Birthdays, groups, first-timers, a full night out with food",
+      "tip": "Walk-in only after 8 p.m. on Fridays and Saturdays, and party reservations are for groups of 15+. If you are two people, just show up before the rush and order the pizza.",
+      "links": [
+        { "label": "College map", "url": "https://maps.google.ca/maps?q=842+College+St,+Toronto,+ON" },
+        { "label": "Danforth map", "url": "https://maps.google.ca/maps?q=485+Danforth+Ave,+Toronto,+ON" },
+        { "label": "Website & FAQ", "url": "https://vipbilliardsclub.com/faq/" },
+        { "label": "(416) 977-1011", "url": "tel:4169771011" }
+      ]
+    },
+    {
+      "type": "venue",
+      "id": "crooked-cue",
+      "num": "05 / Etobicoke & Port Credit",
+      "name": "The Crooked Cue",
+      "area": "Bloor West & Lake Shore",
+      "badge": "Date night",
+      "c1": "#34c759",
+      "c2": "#0f8f6a",
+      "vibe": "The polished west-end choice: Canadian-made Dufferin tables with **Simonis #860 tournament cloth**, Cuetec cues, fireplaces, lounge seating and big screens. The family has been in the billiards business for over a century, and the equipment shows it. Two locations, both with full restaurant menus.",
+      "address": "3056 Bloor St W, Etobicoke - and 75 Lakeshore Rd E, Port Credit (Mississauga)",
+      "hours": "Etobicoke: Sun-Tue noon-12am, Wed-Sat noon-1am. Port Credit: Sun-Wed noon-12am, Thu noon-1am, Fri-Sat noon-2am",
+      "rate": "$27.50/hr Mon-Wed after 6pm; $32.50/hr Thu-Sun after 6pm; **half price before 6pm daily**",
+      "transit": "Etobicoke near Royal York / Old Mill subway and Bloor buses; Port Credit a short walk from Port Credit GO",
+      "parking": "Lot and street parking at both locations",
+      "bestFor": "Date nights, dinner + pool, players who care about cloth and cues",
+      "tip": "Pool tables are first come, first served - but arrive before 6 p.m. and the table time is half price. Reserve a dining table if you are eating; you cannot reserve a pool table.",
+      "links": [
+        { "label": "Etobicoke map", "url": "https://maps.google.ca/maps?q=3056+Bloor+St+W,+Etobicoke,+ON" },
+        { "label": "Port Credit map", "url": "https://maps.google.ca/maps?q=75+Lakeshore+Rd+E,+Mississauga,+ON" },
+        { "label": "Rates & activities", "url": "https://crookedcue.ca/mississauga/our-activities/" },
+        { "label": "(416) 236-7736", "url": "tel:4162367736" }
+      ]
+    },
+    {
+      "type": "venue",
+      "id": "long-shot",
+      "num": "06 / Oakville",
+      "name": "The Long Shot",
+      "area": "450 South Service Rd W, Oakville",
+      "badge": "West GTA",
+      "c1": "#ff8c42",
+      "c2": "#ff3d81",
+      "vibe": "Oakville's indoor sports lounge: pro-feel pool tables alongside batting cages, an indoor cricket cage and ping pong, with a 100% halal kitchen on site. Walk-ins are welcome, there is no membership, and the cues, chalk and rack are included in the rate.",
+      "address": "450 South Service Rd W, Unit 2, Oakville, ON L6K 2H4",
+      "hours": "Open late - until 2am on weekends",
+      "rate": "$25/hour, including cues, chalk and rack",
+      "transit": "Right off the QEW at South Service Rd; realistically a car trip",
+      "parking": "Free on-site parking",
+      "bestFor": "Groups, families, date nights, anyone west of the Humber, late-night racks",
+      "tip": "Book a game slot online for a weekend group; walk-ins are easy on weekdays. Because the equipment is included, you can turn up with nothing and still be playing in five minutes.",
+      "links": [
+        { "label": "Map", "url": "https://maps.google.ca/maps?q=450+South+Service+Rd+W,+Oakville,+ON" },
+        { "label": "Website", "url": "https://thelongshotinc.ca/billiards/" },
+        { "label": "(905) 844-9885", "url": "tel:9058449885" }
+      ]
+    },
+    {
+      "type": "quote",
+      "text": "The best room in the city is the one that matches the night you are actually having. A 9-foot Diamond at 11 a.m. is a completely different sport from a $25 table at 11 p.m. with pizza on the way.",
+      "by": "A rule of thumb worth keeping"
+    },
+    {
+      "type": "h2",
+      "id": "honourable-mentions",
+      "text": "Also worth a rack"
+    },
+    {
+      "type": "p",
+      "text": "The GTA has far more rooms than six. These are the ones that come up again and again when local players trade recommendations - good next stops once you have done the main list."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "**Annex Billiards Club** - 507 Bloor St W, Toronto. Open roughly 11am-3am; famous for cheap day rates. Ask at the front desk.",
+        "**Mr. 8 Billiards** - 388 Spadina Ave, Toronto. Roughly 2pm-2am; clean, well-kept tables and a chill downtown crowd.",
+        "**Charlotte's Room** - 212 King St W, Toronto. Roughly 4pm-2am; stylish, central, good for a pre-dinner rack.",
+        "**House of Snooker Lounge & Sports** - 2789 Lake Shore Blvd W, Etobicoke. Modern room, well-maintained tables, relaxed energy.",
+        "**Pool Academy** - 120 N Queen St, Etobicoke. A newer premium lounge; watch for weekday billiards-night bundles.",
+        "**Pool Lab** - Etobicoke. Private rooms and pro tables with day passes, for when you want a serious solo practice block."
+      ]
+    },
+    {
+      "type": "h2",
+      "id": "pool-crawls",
+      "text": "Three pool crawls you can actually pull off"
+    },
+    {
+      "type": "p",
+      "text": "One room is a night out. Two or three is a proper crawl. These routes are built around real transit lines and real opening hours, not a fantasy itinerary."
+    },
+    {
+      "type": "route",
+      "title": "Route A - The downtown TTC double",
+      "stops": [
+        "Start at **VIP Billiards on College St** when it opens at 4pm ($25/hr). The 506 streetcar drops you close.",
+        "Roll west/south to **Mr. 8 Billiards on Spadina Ave** (open to 2am) for a different crowd and cleaner, quieter tables.",
+        "Finish at **Charlotte's Room on King St W** (4pm-2am) for a nightcap and a last rack before the subway closes."
+      ],
+      "note": "No car, no parking, no designated driver. All three are on streetcar or subway lines, and each is a short hop from the next."
+    },
+    {
+      "type": "route",
+      "title": "Route B - The Scarborough serious-play day",
+      "stops": [
+        "**The Corner Bank at 11am.** Take a 9-foot Diamond, play two hours while the room is empty, and watch the regulars.",
+        "Lunch somewhere along Sheppard, then **Le Spot** in the afternoon for the flat rate and as many racks as you want.",
+        "If you are still standing at 9pm, you have earned the wings with the house hot sauce."
+      ],
+      "note": "A car or rideshare makes this one easy. Two rooms, two completely different eras of Toronto pool, one very cheap day of table time."
+    },
+    {
+      "type": "route",
+      "title": "Route C - The QEW west-end night",
+      "stops": [
+        "**The Crooked Cue before 6pm** - half-price pool, a proper dinner, and Simonis cloth while it is quiet.",
+        "Drive the QEW to **The Long Shot in Oakville** for a late rack (open to 2am on weekends), batting cages and free parking.",
+        "Home before the 401 turns into a parking lot."
+      ],
+      "note": "The best route for a group: one polished room, one playful room, free parking at both, and no downtown traffic."
+    },
+    {
+      "type": "h2",
+      "id": "etiquette",
+      "text": "The unwritten rules"
+    },
+    {
+      "type": "p",
+      "text": "Nobody hands you a rulebook at the desk. These are the ones that separate a welcome return visit from a quiet glare across the table."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "**Agree on the rules before the break.** Bar 8-ball, call-pocket, ball-in-hand, scratch on the 8 - house rules win, but decide them out loud first.",
+        "**Chalk away from the table**, and never put chalk, drinks or phones on the rails.",
+        "**Freeze when someone is down on a shot.** No walking through their sightline, no loud talk, no rattling the change in your pocket.",
+        "**Never move a ball by hand**, call your own fouls, and do not 'help' a ball toward a pocket.",
+        "**If someone is waiting, play winner-stays-on** or offer them the table. Loser racks, winner breaks.",
+        "**House cues are shared.** Don't slam one, don't lean your whole weight on it, and put it back where you found it.",
+        "**Tip your server**, thank the desk on the way out, and do not be the person arguing about a scratch at 1:45 a.m."
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "icon": "8",
+      "title": "The 8-ball rule that starts arguments",
+      "text": "In some rooms a scratch on the 8 is loss of game; in others it is ball-in-hand. Ask **before** the break, not after the cue ball disappears. It is the single most common disagreement in GTA bar pool."
+    },
+    {
+      "type": "h2",
+      "id": "checklist",
+      "text": "First-timer's checklist"
+    },
+    {
+      "type": "checklist",
+      "items": [
+        "Photo ID - several rooms are 19+ later in the evening",
+        "A phone call or a quick check of the venue's hours that day",
+        "A light layer and comfortable shoes (you will be standing for two hours)",
+        "Your own cue if you have one - plus a tip protector and a cube of chalk",
+        "A little cash for tips, even though most rooms take cards",
+        "An agreed set of rules before the first break",
+        "A plan for getting home - the good rooms close at 2 a.m."
+      ]
+    },
+    {
+      "type": "h2",
+      "id": "budget",
+      "text": "What a night actually costs"
+    },
+    {
+      "type": "p",
+      "text": "For two people, two hours on a typical $25/hour table is $50 total - **$25 each** - before food and drinks. Add a round of wings and a couple of drinks and you are looking at roughly $45-$60 a head for a full evening. Four people splitting the same table brings the pool itself down to about $12.50 each. Go before 6 p.m. at The Crooked Cue or take the flat rate at Le Spot and the numbers drop again."
+    },
+    {
+      "type": "stats",
+      "items": [
+        { "value": "$25", "label": "two hours, two people, each" },
+        { "value": "$0", "label": "membership at most rooms" },
+        { "value": "50%", "label": "off before 6pm at Crooked Cue" },
+        { "value": "2am", "label": "last call at the late rooms" }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "p",
+      "text": "That is the map. Start with the room closest to you, go early once to see how it feels, and then work your way along the 401. If you find a table worth writing about - or a rate that has changed since this guide - tell me and I will update the next issue. Now go rack 'em."
+    },
+    {
+      "type": "sources",
+      "title": "Sources & further reading",
+      "items": [
+        { "label": "The Corner Bank - official site (tables, hours, address)", "url": "https://www.thecornerbank.ca/" },
+        { "label": "Le Spot Billiard Lounge - official site (flat rate, address)", "url": "https://lespotbilliard.com/" },
+        { "label": "Shoxs Billiard Lounge - official site (hours, address)", "url": "https://shoxs.ca/" },
+        { "label": "VIP Billiards & Lounge - FAQ (rates, hours, locations)", "url": "https://vipbilliardsclub.com/faq/" },
+        { "label": "The Crooked Cue - activities & table rates", "url": "https://crookedcue.ca/mississauga/our-activities/" },
+        { "label": "The Long Shot - best pool halls in the GTA", "url": "https://thelongshotinc.ca/best-pool-halls-gta-toronto/" },
+        { "label": "Hungry416 - best places to play billiards in Toronto", "url": "https://www.hungry416.com/best-places-to-play-billiards-in-toronto/" },
+        { "label": "ChalkySticks - GTA room directory", "url": "https://www.chalkysticks.com/places/the-corner-bank" }
+      ]
+    }
+  ]
+}

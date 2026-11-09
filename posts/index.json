@@ -1,0 +1,22 @@
+{
+  "site": {
+    "title": "Chalk & Cue",
+    "tagline": "Field notes from the felt",
+    "description": "A field guide to the best pool halls in the Greater Toronto Area."
+  },
+  "posts": [
+    {
+      "slug": "best-pool-halls-gta",
+      "title": "Chalk, Cue & the 401: A Field Guide to the Best Pool Halls in the GTA",
+      "dek": "Seven rooms worth the trip - from 35 Diamond tables in Scarborough to a 2 a.m. rack in Oakville - with addresses, rates, hours, transit and the unwritten rules nobody tells you before the break.",
+      "kicker": "Field Guide No. 01",
+      "date": "2026-11-09",
+      "author": "Andrew",
+      "readMinutes": 12,
+      "tags": ["Field Guide", "GTA", "Toronto", "Pool Halls"],
+      "accent": ["#ffb703", "#ff3d81"],
+      "file": "posts/best-pool-halls-gta.json",
+      "published": true
+    }
+  ]
+}
