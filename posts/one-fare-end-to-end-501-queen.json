@@ -1,0 +1,253 @@
+{
+  "slug": "one-fare-end-to-end-501-queen",
+  "title": "One Fare, End to End: A Slow Rider's Guide to the 501 Queen",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "The 501 is the cheapest long, slow look at Toronto you can buy. For a single fare you can sit by a window and watch the city change block by block - from the Humber bridges in the west to the last loop near the lake in the east, through Victorian main streets, glass towers, parkland and a beach. It takes roughly ninety minutes if you never get off. This is a guide to doing exactly that, and to the handful of places worth breaking the ride for."
+    },
+    {
+      "type": "p",
+      "text": "I wrote it because the 501 is easy to ride and hard to *see*. Most of us know it as the streetcar that is late, or the one that gets short-turned two stops early, or the line of replacement buses on a summer construction weekend. Riding it end to end on purpose, with nothing waiting at the far end, turns it into something else: a window-seat survey of how the city is patched together."
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "icon": "!",
+      "title": "Check the TTC before you go",
+      "text": "The 501 is routinely split into sections, short-turned, or replaced by buses for track work, events and construction. 'End to end' often means a change of vehicle at a division point. Nothing below is a timetable - check the TTC trip planner on the morning you ride, and treat the routes here as a way to read the street, not a schedule."
+    },
+    {
+      "type": "h2",
+      "id": "how-it-works",
+      "text": "How the 501 actually works"
+    },
+    {
+      "type": "p",
+      "text": "The useful mental model is that Queen is less a single ride than a corridor with a number painted on it. It is one of the oldest continuous streetcar lines in the city, and it behaves like old infrastructure: dependable in spirit, improvised in practice. Know these six things and the whole trip becomes easy."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "**It is often run in pieces.** On many days the line is split at a downtown division point and you change vehicles to carry on. Ask the operator whether the car goes all the way rather than assuming it does.",
+        "**One fare covers the lot.** Tap a PRESTO card or a contactless payment as you board. The transfer is time-based, so you can get off, wander and re-board within the window without paying twice.",
+        "**Board through any door** on the newer cars and keep your proof of payment with you - fare inspectors do get on.",
+        "**Streetcars share the street.** They stop in the right lane, not at a platform, so you wait on the sidewalk and step out into traffic. Watch for cyclists and drivers passing on the right.",
+        "**Service is frequent but not clockwork.** The line runs from early morning until after midnight. Allow slack; do not build a tight connection around it.",
+        "**Westbound heads for the Humber, eastbound for Neville Park and the Beaches.** Get this backwards and you simply see the city in reverse, which is also a perfectly good afternoon."
+      ]
+    },
+    {
+      "type": "stats",
+      "items": [
+        { "value": "~24 km", "label": "Humber to the east end, roughly" },
+        { "value": "1 fare", "label": "for the entire corridor" },
+        { "value": "~90 min", "label": "end to end if you never get off" },
+        { "value": "0", "label": "tickets, reservations or plans needed" }
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "What you notice from a window seat"
+    },
+    {
+      "type": "p",
+      "text": "From a car window the city stops being a list of neighbourhoods and becomes a continuous thing. Brick gives way to glass and then to brick again. A street that is all cheap storefronts turns, one intersection later, into a street of careful renovations. The 501 does not skip the in-between parts the way the subway does, and the in-between parts are most of Toronto."
+    },
+    {
+      "type": "quote",
+      "text": "A subway shows you where the city decided to put people. A streetcar shows you what was already there.",
+      "by": "The case for sitting down"
+    },
+    {
+      "type": "h2",
+      "id": "the-ride",
+      "text": "The ride, in three acts"
+    },
+    {
+      "type": "p",
+      "text": "Do not think of it as one long trip. Think of it as three short ones with the same seat. Here is how the street tends to unfold, west to east."
+    },
+    {
+      "type": "route",
+      "title": "Act I - The west, from the Humber to Parkdale",
+      "stops": [
+        "Start at the **Humber loop** where the line begins near the river and the old bridge. The city feels almost like a small town here.",
+        "Roll through **Roncesvalles** - Polish bakeries, low shopfronts, wide sidewalks - and watch the dense residential streets begin.",
+        "At **Parkdale**, the storefronts get scruffier and more interesting. This is the stretch worth getting off for coffee if the car is crowded.",
+        "By **Dufferin**, the downtown skyline starts to appear in gaps between the buildings."
+      ],
+      "note": "This is the quietest act. Go in the morning, take a seat on the right eastbound, and let the city arrive gradually."
+    },
+    {
+      "type": "route",
+      "title": "Act II - Downtown, from Queen West to Yonge",
+      "stops": [
+        "**Trinity Bellwoods to Spadina**: the busiest retail stretch on the line, all design shops, cafés and foot traffic.",
+        "**City Hall and Osgoode**: the street suddenly becomes civic and formal - big stone, big setbacks, the towers of the financial district behind them.",
+        "**Queen and Yonge**: the nominal centre of the grid, and usually the most crowded stop. Expect a shuffle of people and a pause.",
+        "East of Yonge the towers thin out and the older, lower city reappears almost immediately."
+      ],
+      "note": "If you only have half an hour, ride this act. It contains the whole argument about how Toronto changed in one generation."
+    },
+    {
+      "type": "route",
+      "title": "Act III - The east, from Moss Park to the lake",
+      "stops": [
+        "**Moss Park to Parliament**: a plainer, quieter Queen, with wide intersections and long blocks.",
+        "**Riverdale and Leslieville**: the retail comes back, smaller and more independent, and the houses get taller and narrower.",
+        "**The Beaches**: the street slows down, the shops turn seasonal, and you can suddenly see the lake at the bottom of the side streets.",
+        "Finish at **Neville Park**, where the car turns around and everyone gets out. Walk two minutes south and you are at the water."
+      ],
+      "note": "Save this act for late afternoon. Ending at the lake on a clear day is the whole point of riding east in the first place."
+    },
+    {
+      "type": "h2",
+      "id": "stops-worth-getting-off-for",
+      "text": "Three stops worth getting off for"
+    },
+    {
+      "type": "p",
+      "text": "You can ride the whole thing without moving, but these are the places where a twenty-minute detour repays the fare. Details are deliberately loose - these are neighbourhoods, not booked attractions, so check hours before you go."
+    },
+    {
+      "type": "venue",
+      "id": "trinity-bellwoods",
+      "num": "01 / West",
+      "name": "Trinity Bellwoods Park",
+      "area": "Queen St W at Ossington Ave",
+      "badge": "A long sit",
+      "c1": "#b23a2b",
+      "c2": "#b23a2b",
+      "vibe": "The best free interruption on the line. A big sloped lawn, old trees, a dog bowl that is basically a small lake, and a steady parade of the neighbourhood. Queen West's shops and bakeries are a block away, so the move is simple: get off, buy something, come back and sit.",
+      "address": "Queen St W near Ossington Ave, Toronto",
+      "transit": "501 Queen at Ossington; also handy for the Ossington and College buses",
+      "parking": "Street parking is tight - the streetcar is the point",
+      "bestFor": "A picnic, dogs, a chapter of a book, watching the city go past",
+      "tip": "The park slopes down from Queen. Walk to the bottom and turn around for the best view back up at the houses.",
+      "links": [
+        { "label": "Map", "url": "https://maps.google.ca/maps?q=Trinity+Bellwoods+Park,+Toronto" }
+      ]
+    },
+    {
+      "type": "venue",
+      "id": "queen-west",
+      "num": "02 / Downtown",
+      "name": "The Queen West strip",
+      "area": "Queen St W, Spadina to Bathurst",
+      "badge": "Window shopping",
+      "c1": "#b23a2b",
+      "c2": "#b23a2b",
+      "vibe": "A few blocks of the densest, most self-conscious retail in the city - bookshops, record stores, small clothing labels and a lot of very good coffee. It changes faster than any other stretch on the line, so half the fun is seeing what replaced what since your last ride.",
+      "address": "Queen St W between Spadina Ave and Bathurst St, Toronto",
+      "transit": "501 Queen; a short walk from the Spadina or Bathurst buses",
+      "parking": "Green P lots nearby, but walking from the stop is easier",
+      "bestFor": "A rainy afternoon, browsing without a list, a proper coffee",
+      "tip": "Walk it east to west rather than riding through it. The shopfronts are meant to be seen at three kilometres an hour, not thirty.",
+      "links": [
+        { "label": "Map", "url": "https://maps.google.ca/maps?q=Queen+St+W+and+Spadina+Ave,+Toronto" }
+      ]
+    },
+    {
+      "type": "venue",
+      "id": "kew-beaches",
+      "num": "03 / East",
+      "name": "Kew Gardens & the Beaches",
+      "area": "Queen St E near Lee Ave",
+      "badge": "The payoff",
+      "c1": "#b23a2b",
+      "c2": "#b23a2b",
+      "vibe": "Where the streetcar finally runs out of city. A lakeside park, a boardwalk, a beach and a main street that still feels like a main street. Get off at the east end, walk south to the water, and the ninety-minute ride suddenly makes sense.",
+      "address": "Queen St E at Lee Ave, Toronto (a short walk to the lake)",
+      "transit": "501 Queen eastbound to the Neville Park area",
+      "parking": "Street parking on the side streets; busy on summer weekends",
+      "bestFor": "Ending the trip, a swim in season, ice cream, doing nothing",
+      "tip": "Go on a weekday if you can. On a hot Saturday the whole line seems to be heading for the same patch of sand.",
+      "links": [
+        { "label": "Map", "url": "https://maps.google.ca/maps?q=Kew+Gardens,+The+Beaches,+Toronto" }
+      ]
+    },
+    {
+      "type": "h2",
+      "id": "the-unwritten-rules",
+      "text": "The unwritten rules of a long ride"
+    },
+    {
+      "type": "p",
+      "text": "Nobody hands you a rulebook at the stop. These are the small courtesies that make a two-hour sit pleasant for everyone in the car."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "**Move in, then sit.** On a crowded car, walk toward the middle before claiming a seat so people boarding behind you are not stuck at the door.",
+        "**Give up the priority seats** near the front without being asked, and keep the aisle clear of bags and feet.",
+        "**Take off a backpack** when the car is full. It takes two seconds and buys a surprising amount of goodwill.",
+        "**Keep the volume down** - headphones, not speakers, and phone calls kept short and quiet.",
+        "**Let people off before you push on**, and use the rear doors to board when the front is jammed.",
+        "**Have your fare ready** before the doors open so the whole car is not waiting while you find a card.",
+        "**Do not block the window** for a photo at the exact moment the light changes. There is always another stop."
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "icon": "✓",
+      "title": "The cheapest city tour in Toronto",
+      "text": "For one fare you get a couple of hours of the best people-watching in town. Go mid-morning on a weekday, take a window seat, and deliberately leave the return trip unplanned. The whole point is that nothing is waiting at the other end."
+    },
+    {
+      "type": "h2",
+      "id": "what-to-bring",
+      "text": "What to bring"
+    },
+    {
+      "type": "checklist",
+      "items": [
+        "A PRESTO card or a contactless card with a tapped fare ready to go",
+        "Headphones - but one ear free enough to hear stop announcements",
+        "A book or a notebook for the stretches between the interesting bits",
+        "A layer of some kind; the older cars run warm, the newer ones cool",
+        "A phone with the TTC trip planner open for the service alerts",
+        "Water and something small to eat if you plan to get off and walk",
+        "No fixed schedule at the far end - this is the most important item"
+      ]
+    },
+    {
+      "type": "h2",
+      "id": "when-to-go",
+      "text": "When to go"
+    },
+    {
+      "type": "p",
+      "text": "Almost any time works, but the ride changes character with the clock. A few rules of thumb, none of them strict:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "**Weekday mid-morning** is the sweet spot: light crowds, good window light, and a car that mostly moves.",
+        "**Late afternoon eastbound** puts the low sun behind you and ends at the lake at the best hour.",
+        "**Rush hour** is the worst time for a slow ride and the best time to remember you are not in a hurry. Avoid it on your first attempt.",
+        "**Summer weekends** mean construction diversions and packed cars near the Beaches - check the alerts before committing.",
+        "**A grey, drizzly day** is secretly ideal. The windows fog, the colours flatten, and the whole city looks like a photograph."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "p",
+      "text": "That is the line. Start wherever you are closest, ride one act or all three, and get off at least once for no particular reason. If you find a stop worth writing about - or a diversion that has changed since this went up - tell me and I will fold it into the next issue. Now go find a window seat."
+    },
+    {
+      "type": "sources",
+      "title": "Sources & further reading",
+      "items": [
+        { "label": "Toronto Transit Commission - official site (fares, routes, service alerts)", "url": "https://www.ttc.ca/" },
+        { "label": "PRESTO - fares and time-based transfers", "url": "https://www.prestocard.ca/" },
+        { "label": "Wikipedia - 501 Queen (route history and termini)", "url": "https://en.wikipedia.org/wiki/501_Queen" },
+        { "label": "Wikipedia - Toronto streetcar system", "url": "https://en.wikipedia.org/wiki/Toronto_streetcar_system" },
+        { "label": "City of Toronto - official site (parks and neighbourhoods)", "url": "https://www.toronto.ca/" }
+      ]
+    }
+  ]
+}

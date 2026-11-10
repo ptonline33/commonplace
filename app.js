@@ -155,8 +155,8 @@ function renderHome() {
   $("postCount").textContent = posts.length + (posts.length === 1 ? " post" : " posts");
 
   const stats = [
-    { value: "01", label: "post and counting" },
-    { value: "12 min", label: "the first read" },
+    { value: String(posts.length).padStart(2, "0"), label: posts.length === 1 ? "post and counting" : "posts and counting" },
+    { value: "12 min", label: "the flagship read" },
     { value: "0", label: "trackers or paywalls" },
     { value: "100%", label: "offline ready" }
   ];
@@ -169,7 +169,7 @@ function renderHome() {
       const accent = accentOf(p);
       const cover = `<div class="card-cover">
           <span class="cover-label">Commonplace &middot; ${esc(p.kicker || "Journal")}</span>
-          <span class="cover-num">${String(i + 1).padStart(2, "0")}</span>
+          <span class="cover-num">${esc(p.issue || String(i + 1).padStart(2, "0"))}</span>
           <span class="cover-lines"><i></i><i></i><i></i></span>
         </div>`;
       return `<a class="post-card ${i === 0 ? "featured" : ""}" href="#/post/${esc(p.slug)}" style="--post-accent:${esc(accent)}">
@@ -214,7 +214,7 @@ async function openPost(slug) {
   const cover = $("articleCover");
   cover.style.setProperty("--post-accent", accentOf(meta));
   cover.innerHTML = `<span class="cover-text">Commonplace &middot; ${esc(meta.kicker || "Journal")}</span>
-    <span class="cover-num">01</span>
+    <span class="cover-num">${esc(meta.issue || "01")}</span>
     <span class="cover-lines"><i></i><i></i><i></i></span>`;
 
   $("articleBody").innerHTML = '<p class="muted">Loading the post&hellip;</p>';

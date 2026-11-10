@@ -7,6 +7,7 @@
   "posts": [
     {
       "slug": "best-pool-halls-gta",
+      "issue": "01",
       "title": "Chalk, Cue & the 401: A Field Guide to the Best Pool Halls in the GTA",
       "dek": "Seven rooms worth the trip - from 35 Diamond tables in Scarborough to a 2 a.m. rack in Oakville - with addresses, rates, hours, transit and the unwritten rules nobody tells you before the break.",
       "kicker": "Field Guide No. 01",
@@ -16,6 +17,34 @@
       "tags": ["Field Guide", "GTA", "Toronto", "Pool Halls"],
       "accent": ["#b23a2b"],
       "file": "posts/best-pool-halls-gta.json",
+      "published": true
+    },
+    {
+      "slug": "one-fare-end-to-end-501-queen",
+      "issue": "02",
+      "title": "One Fare, End to End: A Slow Rider's Guide to the 501 Queen",
+      "dek": "Twenty-odd kilometres of Queen Street from the Humber to the Beaches, seen at streetcar speed - how the line really works, three acts of window-seat city, the stops worth getting off for, and the small unwritten rules of riding the whole thing in one sitting.",
+      "kicker": "City Notes No. 02",
+      "date": "2026-11-10",
+      "author": "Andrew",
+      "readMinutes": 9,
+      "tags": ["City Notes", "Toronto", "Transit", "Slow Travel"],
+      "accent": ["#b23a2b"],
+      "file": "posts/one-fare-end-to-end-501-queen.json",
+      "published": true
+    },
+    {
+      "slug": "how-to-keep-a-commonplace-book",
+      "issue": "03",
+      "title": "How to Keep a Commonplace Book (and Why It's Worth the Trouble)",
+      "dek": "The journal is named after an old, unfashionable habit: copying down anything worth returning to. What a commonplace book is, how to start one in ten minutes, and how to keep it from becoming another abandoned system.",
+      "kicker": "Essay No. 03",
+      "date": "2026-11-10",
+      "author": "Andrew",
+      "readMinutes": 7,
+      "tags": ["Essay", "How-to", "Writing", "Notes"],
+      "accent": ["#b23a2b"],
+      "file": "posts/how-to-keep-a-commonplace-book.json",
       "published": true
     }
   ]

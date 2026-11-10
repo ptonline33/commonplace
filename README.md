@@ -27,7 +27,7 @@ icons/                   192 / 512 / maskable / apple-touch (generated C monogra
 posts/index.json         post catalog (metadata)
 posts/*.json             post bodies as typed content blocks
 supabase/schema.sql      blog_posts + blog_reactions tables with RLS
-supabase/seed.sql        optional seed for issue 01
+supabase/seed.sql        optional seeds for the bundled posts
 api/posts.js             Vercel function: published posts from Supabase
 api/reactions.js         Vercel function: clap counts + inserts
 tools/make-icons.py      dependency-free PNG icon generator

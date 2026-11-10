@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-10 — Issues 02 & 03
+
+- Added **"One Fare, End to End: A Slow Rider's Guide to the 501 Queen"** (City Notes No. 02) and **"How to Keep a Commonplace Book (and Why It's Worth the Trouble)"** (Essay No. 03). The journal now has three posts across three of its stated topics: a field guide, city notes and an essay/how-to.
+- Registered both in `posts/index.json`, precached them in `sw.js` (bumped `VERSION` to `commonplace-v2`), and added matching optional rows to `supabase/seed.sql`.
+- Gave each post a stable `issue` number used for its cover numeral (replacing the hardcoded `01`), made the homepage post count dynamic, and refreshed the stale "Issue 01" homepage copy so the site reads correctly with more than one issue.
+
 ## 2026-11-09 — Rebrand to Commonplace
 
 - Reframed the site as a **general blog** (the pool-hall guide is just issue 01, not the theme) and renamed it **Commonplace** across the site, manifest, icons, repo (`ptonline33/commonplace`) and Vercel project.

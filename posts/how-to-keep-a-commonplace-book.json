@@ -1,0 +1,174 @@
+{
+  "slug": "how-to-keep-a-commonplace-book",
+  "title": "How to Keep a Commonplace Book (and Why It's Worth the Trouble)",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "Before there were blogs, note apps, bookmarks and read-later queues, there was the commonplace book: a blank book where you copied down anything you wanted to return to. A line from a book. A recipe. An address. Something someone said on a train that you did not want to lose. This journal is named after that habit, so it seems only fair to write down how to start one - and how to keep it from becoming another abandoned system."
+    },
+    {
+      "type": "p",
+      "text": "The idea is almost embarrassingly simple, which is why it is easy to skip over. There is no method to master, no weekly review, no streak to protect. You notice something, you write it down, and later you stumble across it again. That is the whole mechanism. The trouble is that simple things are hard to trust, so we tend to dress them up until they collapse under the weight."
+    },
+    {
+      "type": "quote",
+      "text": "A commonplace book is not a record of what happened to you. It is a record of what you paid attention to.",
+      "by": "The whole idea in one sentence"
+    },
+    {
+      "type": "h2",
+      "id": "what-it-is",
+      "text": "What a commonplace book actually is"
+    },
+    {
+      "type": "p",
+      "text": "It helps to say what it is not. A commonplace book is a collection, not a chronology. Nobody is asking you to account for your day, and nothing has to be in order, complete, or even in your own words. Most entries are borrowed: a sentence someone else wrote that you did not want to forget."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "**It is not a diary.** A diary says what you did on Tuesday. A commonplace book says what was worth keeping from Tuesday, and often does not mention Tuesday at all.",
+        "**It is not a to-do list.** Nothing in it is owed anything. You are not behind on your commonplace book.",
+        "**It is not a scrapbook of achievements.** It is allowed to be trivial, half-finished and slightly embarrassing.",
+        "**It is not organised, at least not at first.** Order is something that emerges later, if at all. The first job is only to catch things.",
+        "**It is cumulative.** A single entry is a curiosity. Two hundred entries, read years later, are a portrait of a mind."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "A short, unromantic history"
+    },
+    {
+      "type": "p",
+      "text": "The habit is a few centuries old. Before books were cheap and searchable, a serious reader copied passages by hand into a bound notebook, often under headings, so that a good argument or a fine phrase could be found again. Even John Locke sketched a little indexing scheme for one. Then printing got cheap, cameras got universal, and the copying stopped being necessary. What did not stop was the impulse behind it: the wish to keep a small, private shelf of things that struck you."
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "icon": "✓",
+      "title": "Start with paper, not a system",
+      "text": "The fastest way to kill a commonplace book is to spend an afternoon choosing the perfect app, the perfect tags and the perfect notebook. Buy the cheapest one you like the feel of and write something in it tonight. You can always change the container later; you cannot backfill a year of things you noticed."
+    },
+    {
+      "type": "h2",
+      "id": "how-to-start",
+      "text": "How to start one in ten minutes"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "**Get a book.** Any notebook will do. A pocket one is better than a beautiful one, because a pocket one actually comes with you.",
+        "**Write the date at the top of the first page.** Dates cost one second and are worth years later, when a line with no context becomes a small mystery.",
+        "**Copy one thing.** A sentence from whatever you are reading, a phrase you overheard, a line from a song. Copy it exactly and note where it came from.",
+        "**Add one line of your own.** Why you kept it, what it reminded you of, or just *not sure why yet*. This is the part that makes it yours.",
+        "**Stop.** Ten minutes is enough. Close the book and put it where you will see it tomorrow.",
+        "**Repeat once, sometime in the next few days.** Two entries make it a habit. A hundred entries make it a commonplace book, but you only ever have to write the next one."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "What counts as worth keeping"
+    },
+    {
+      "type": "p",
+      "text": "Anything that made you stop for a second. If you are waiting for something profound enough to justify a page, you will never fill a page. Some honest examples:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "A sentence from a novel that you had to read twice",
+        "A recipe scribbled on a napkin, with the person who gave it to you",
+        "An address, a shop name, a trailhead, a train platform",
+        "Something a child said that was funnier than it should have been",
+        "A question you cannot answer yet, written down so it keeps nagging",
+        "A word you looked up, a fact you did not know, a small correction",
+        "A sketch of a doorway, or the shape of a street corner",
+        "A line of your own that arrived while doing something else"
+      ]
+    },
+    {
+      "type": "h2",
+      "id": "a-system-that-survives",
+      "text": "A system that survives contact with real life"
+    },
+    {
+      "type": "p",
+      "text": "You do not need a system, but four small habits keep the book from becoming a drawer of illegible scraps. They are deliberately undemanding, because the failure mode of every note-taking setup is that it asks for more effort than a Tuesday can supply."
+    },
+    {
+      "type": "checklist",
+      "items": [
+        "**Date everything.** One second now, a small gift to your future self.",
+        "**Note the source.** A name, a title, a URL, a who-said-it - enough to find it again or to give credit.",
+        "**Tag loosely, or not at all.** A keyword in the margin is plenty. If you build a taxonomy you will spend your time filing instead of noticing.",
+        "**Keep the barrier low.** A one-line entry counts. A messy entry counts. An entry in pencil counts.",
+        "**Revisit without a goal.** Flip through it occasionally with no intention of using anything. The good entries resurface on their own.",
+        "**Let it be incomplete.** Gaps, abandoned pages and months of silence are features, not failures."
+      ]
+    },
+    {
+      "type": "stats",
+      "items": [
+        { "value": "1", "label": "notebook is all you need" },
+        { "value": "10 min", "label": "to start, tonight" },
+        { "value": "1 line", "label": "counts as a valid entry" },
+        { "value": "0", "label": "rules about what is allowed in" }
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "icon": "!",
+      "title": "The one reliable way to kill it",
+      "text": "Turning it into a productivity system. The moment it acquires a colour-coded taxonomy, a mandatory weekly review and a streak to protect, it becomes a chore you will quietly abandon by February. A commonplace book is allowed to be messy, half-empty and forgotten for a month. That permission is what keeps it alive."
+    },
+    {
+      "type": "h2",
+      "id": "doing-it-on-a-phone",
+      "text": "About doing it on a phone"
+    },
+    {
+      "type": "p",
+      "text": "There is no virtue in paper. A notes app, a message to yourself, a photo of a page - all of it counts, and all of it is easier to search than a bound book. The only thing the medium cannot do for you is the noticing. A searchable archive of things you never really looked at is just a fuller drawer."
+    },
+    {
+      "type": "p",
+      "text": "This journal is my own version of the same habit, moved onto a screen. The posts are plain text files that ship with the app, so they are there on the subway with no signal; it installs on a phone; it remembers how you like to read. The container changed completely. The impulse - *this is worth returning to, so write it down* - did not change at all."
+    },
+    {
+      "type": "h2",
+      "id": "why-bother",
+      "text": "Why bother"
+    },
+    {
+      "type": "p",
+      "text": "Because attention is the scarce thing, and a commonplace book is a fossil record of it. Read one back after a few years and you do not learn what happened; you learn what you kept stopping for. The same three subjects turn up again and again. A question you wrote down in one decade gets answered, accidentally, in another. It is the closest thing to a conversation with a past version of yourself that does not require that version to have been honest or eloquent - only to have paid attention."
+    },
+    {
+      "type": "p",
+      "text": "It is also a quiet argument against the feed. Nothing in a commonplace book is optimised to keep you scrolling, ranked by engagement, or addressed to an audience. It is a small shelf of things that were worth a second look, kept for the only person guaranteed to be interested: you, later."
+    },
+    {
+      "type": "quote",
+      "text": "You do not keep a commonplace book to remember things. You keep it to find out what you keep noticing.",
+      "by": "The best argument for starting one"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "p",
+      "text": "So that is the whole method: get a book, write one thing down, and do not make it a project. If you already keep one - or start one after reading this - send me the first line you copied. I would genuinely like to know what people find worth returning to."
+    },
+    {
+      "type": "sources",
+      "title": "Sources & further reading",
+      "items": [
+        { "label": "Wikipedia - Commonplace book (history of the practice)", "url": "https://en.wikipedia.org/wiki/Commonplace_book" },
+        { "label": "Wikipedia - John Locke (and his indexing method)", "url": "https://en.wikipedia.org/wiki/John_Locke" },
+        { "label": "Wikipedia - Zettelkasten (for when you do want a system)", "url": "https://en.wikipedia.org/wiki/Zettelkasten" },
+        { "label": "Commonplace - about this journal", "url": "./#/about" }
+      ]
+    }
+  ]
+}
