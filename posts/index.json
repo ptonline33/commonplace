@@ -46,6 +46,20 @@
       "accent": ["#b23a2b"],
       "file": "posts/how-to-keep-a-commonplace-book.json",
       "published": true
+    },
+    {
+      "slug": "the-quiet-download",
+      "issue": "04",
+      "title": "The Quiet Download: What Your ISP Sees When a Server Does the Torrenting",
+      "dek": "Two ways to pull the same 17 GB file across the internet - BitTorrent straight to your laptop, or a small cloud box that does the torrenting and hands you the finished file over HTTPS. The privacy difference has less to do with encryption than you'd think.",
+      "kicker": "How-to No. 04",
+      "date": "2026-11-12",
+      "author": "Andrew",
+      "readMinutes": 8,
+      "tags": ["How-to", "Networking", "Privacy", "Self-hosting"],
+      "accent": ["#b23a2b"],
+      "file": "posts/the-quiet-download.json",
+      "published": true
     }
   ]
 }

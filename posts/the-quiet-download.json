@@ -1,0 +1,165 @@
+{
+  "slug": "the-quiet-download",
+  "title": "The Quiet Download: What Your ISP Sees When a Server Does the Torrenting",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "There are two ways to get a large file home. You can run a BitTorrent client on your own machine and join the swarm, or you can let a small server somewhere else join the swarm for you, then fetch the finished file over an ordinary HTTPS connection. I built the second kind this autumn - a phone-friendly PWA that adds torrents to a cloud VM, and a Download button that streams the result back - and it raised a question worth writing down: **what does my ISP actually see?**"
+    },
+    {
+      "type": "p",
+      "text": "The setup is deliberately boring. Transmission runs on a small cloud VM. A tiny Python server on port 8081 serves the PWA, proxies the Transmission RPC, lists only completed files, and streams them on request. A Cloudflare Tunnel puts that server behind an HTTPS hostname. Nothing is seeded: once a torrent reaches 100% it is removed from Transmission with its files left on disk."
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "icon": "\u2713",
+      "title": "The short answer",
+      "text": "Your ISP sees **one encrypted connection to one CDN IP** and a large, sustained transfer. It sees no peers, no tracker announces, no DHT chatter and no upload traffic - because none of that ever happened on your network. It still sees *how much* you downloaded and *when*."
+    },
+    {
+      "type": "h2",
+      "id": "two-paths",
+      "text": "Two ways to pull the same file"
+    },
+    {
+      "type": "route",
+      "title": "Path A - BitTorrent, straight to your laptop",
+      "stops": [
+        "Your client reads the .torrent or magnet link and asks a tracker or the DHT for peers.",
+        "It opens dozens of connections to strangers' machines, usually on a high port like 51413.",
+        "Pieces arrive from many places at once, and your client uploads pieces back - that is the protocol, not a setting.",
+        "Your public IP is visible to every peer in the swarm, and to anyone watching the swarm."
+      ],
+      "note": "**What your ISP sees:** a fan of long-lived connections to many unrelated IPs, sustained upload as well as download, UDP chatter and tracker announces. That pattern is easy to classify as P2P even when the payload is obfuscated."
+    },
+    {
+      "type": "route",
+      "title": "Path B - the box does the torrenting",
+      "stops": [
+        "A small cloud VM runs Transmission. You add the torrent from a PWA on your phone.",
+        "The VM joins the swarm, collects the pieces, and at 100% the torrent is removed with its files left on disk. No seeding.",
+        "You press Download. One HTTPS request goes to a CDN hostname and the finished file streams down."
+      ],
+      "note": "**What your ISP sees:** one TLS connection to one CDN IP, and a large sustained transfer. Nothing else."
+    },
+    {
+      "type": "h2",
+      "id": "the-point",
+      "text": "The part that actually changes the picture"
+    },
+    {
+      "type": "p",
+      "text": "It is tempting to credit the encryption. But the real difference is simpler: **the BitTorrent traffic never touched your network at all.** The swarm, the peers, the tracker and the seeding all happened on a machine in a data centre, on a different connection, under a different ISP. By the time your laptop talks to anything, the torrent is over and the only thing left is an ordinary file download."
+    },
+    {
+      "type": "stats",
+      "items": [
+        { "value": "0", "label": "BitTorrent peers on your network" },
+        { "value": "1", "label": "TLS connection for the whole download" },
+        { "value": "8081", "label": "the plain-HTTP loopback port on the VM" },
+        { "value": "17 GB", "label": "one file, one request" }
+      ]
+    },
+    {
+      "type": "h2",
+      "id": "what-tls-hides",
+      "text": "What TLS hides, and what it doesn't"
+    },
+    {
+      "type": "h3",
+      "text": "Hidden from your ISP"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "The URL path and query string.",
+        "The filename in `Content-Disposition`, and the Basic-auth header.",
+        "Every byte of the file itself.",
+        "Anything that would identify it as a movie, a torrent, or a file that came from one."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Still visible"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "**A connection to a CDN IP**, and exactly when it starts and stops.",
+        "**The volume.** A 17 GB file is 17 GB of bytes however well wrapped; size and timing are not encrypted.",
+        "**The hostname**, usually through SNI unless Encrypted Client Hello is in play - and the DNS lookup, unless your resolver uses DoH or DoT.",
+        "**The fact that a download happened**, but not what the download was."
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "icon": "!",
+      "title": "You moved the exposure, you didn't delete it",
+      "text": "TLS ends at the CDN, so **Cloudflare sees the plaintext**: the URL, the headers, the filename and the contents. And the VM's own network sees the BitTorrent swarm in full. This is a shift of *where* the traffic is visible, not a magic eraser. If your threat model includes the CDN or the hosting provider, this design does not solve that."
+    },
+    {
+      "type": "h2",
+      "id": "the-last-hop",
+      "text": "The hop nobody draws"
+    },
+    {
+      "type": "p",
+      "text": "A diagram of this setup usually stops at \"HTTPS\". The actual chain has one more leg, and it is worth being honest about:"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "**Your browser to the CDN edge:** TLS. Encrypted across the public internet.",
+        "**CDN edge to `cloudflared`:** carried inside the tunnel, also encrypted.",
+        "**`cloudflared` to the Python server:** plain HTTP on `127.0.0.1:8081`. There is no TLS listener on the box."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "That last hop is unencrypted, but it never leaves the machine - it is loopback. The Basic-auth credential travels encrypted over the internet and in clear text only between two processes on the same host. Put that server on a LAN interface instead and the answer changes, so it is worth knowing which one you actually have."
+    },
+    {
+      "type": "h2",
+      "id": "details",
+      "text": "Four small details that make it work"
+    },
+    {
+      "type": "checklist",
+      "items": [
+        "**Serve only finished files.** Keep partials in an `.incomplete/` directory with a `.part` suffix, hide them from the file list, and return HTTP 409 if someone requests one directly.",
+        "**Decode the URL on the server.** `encodeURIComponent()` turns `+` into `%2B`. If the GET handler does not `unquote()` before resolving the path, it returns an empty 404 - and a browser with a `download` attribute will happily save that as a 0 KB file.",
+        "**Honour `Range`.** If you advertise `Accept-Ranges: bytes`, implement it. Otherwise a 17 GB download cannot resume and every range request comes back as a 200 with the whole file from byte 0.",
+        "**Rotate the Basic-auth password.** It is the only thing between a public HTTPS hostname and your files."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "h2",
+      "id": "bottom-line",
+      "text": "The bottom line"
+    },
+    {
+      "type": "p",
+      "text": "If you want the contents of a transfer hidden from your ISP, HTTPS does that job well and has done for years. If you want the *activity* hidden - the swarm, the peers, the seeding, the upload - encryption is not what buys it. Putting the BitTorrent client on a machine that is not on your network does. The two ideas are often sold as one thing. They aren't."
+    },
+    {
+      "type": "quote",
+      "text": "Encryption hides the contents. Moving the machine hides the activity."
+    },
+    {
+      "type": "sources",
+      "title": "Sources & further reading",
+      "items": [
+        { "label": "Cloudflare Tunnel - how it works", "url": "https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/" },
+        { "label": "Transmission RPC specification", "url": "https://github.com/transmission/transmission/blob/main/docs/rpc-spec.md" },
+        { "label": "RFC 9110 - HTTP Semantics (Range Requests)", "url": "https://www.rfc-editor.org/rfc/rfc9110" },
+        { "label": "RFC 8446 - TLS 1.3", "url": "https://www.rfc-editor.org/rfc/rfc8446" },
+        { "label": "MDN - encodeURIComponent()", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent" }
+      ]
+    }
+  ]
+}

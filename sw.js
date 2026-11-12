@@ -6,7 +6,7 @@
  *  - /api/*: network-only. Cloud posts and claps are live data and should
  *    never be served from a stale cache.
  */
-const VERSION = "commonplace-v2";
+const VERSION = "commonplace-v3";
 const SHELL = [
   "./",
   "index.html",
@@ -29,7 +29,8 @@ const SHELL = [
   "posts/index.json",
   "posts/best-pool-halls-gta.json",
   "posts/one-fare-end-to-end-501-queen.json",
-  "posts/how-to-keep-a-commonplace-book.json"
+  "posts/how-to-keep-a-commonplace-book.json",
+  "posts/the-quiet-download.json"
 ];
 
 self.addEventListener("install", (event) => {

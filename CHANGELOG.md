@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-12 — Issue 04
+
+- Added **"The Quiet Download: What Your ISP Sees When a Server Does the Torrenting"** (How-to No. 04). A tech note comparing a direct BitTorrent download with a cloud box that torrents on your behalf and streams the finished file over HTTPS: what TLS hides, what the ISP still sees, the loopback hop behind a Cloudflare Tunnel, and the small serving details (URL decoding, Range support, partial-file guards) that make it work.
+- Registered it in `posts/index.json`, precached it in `sw.js` (bumped `VERSION` to `commonplace-v3`), and added a matching optional row to `supabase/seed.sql`. The journal now has four posts.
+
 ## 2026-11-10 — Issues 02 & 03
 
 - Added **"One Fare, End to End: A Slow Rider's Guide to the 501 Queen"** (City Notes No. 02) and **"How to Keep a Commonplace Book (and Why It's Worth the Trouble)"** (Essay No. 03). The journal now has three posts across three of its stated topics: a field guide, city notes and an essay/how-to.

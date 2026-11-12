@@ -1,5 +1,5 @@
 -- Commonplace — optional seed. Run after schema.sql.
--- The PWA already ships all three issues as posts/*.json, so the site works
+-- The PWA already ships all four issues as posts/*.json, so the site works
 -- with or without these rows. Adding them lets you edit each post's metadata
 -- (title, dek, tags, published flag) from Supabase without a redeploy.
 
@@ -65,6 +65,30 @@ values
     array['Essay', 'How-to', 'Writing', 'Notes']::text[],
     array['#b23a2b']::text[],
     'posts/how-to-keep-a-commonplace-book.json',
+    true
+  )
+on conflict (slug) do update set
+  title = excluded.title,
+  dek = excluded.dek,
+  read_minutes = excluded.read_minutes,
+  tags = excluded.tags,
+  published = excluded.published;
+
+-- Issue 04 - How-to / Tech note
+insert into public.blog_posts
+  (slug, title, dek, kicker, author, "date", read_minutes, tags, accent, file, published)
+values
+  (
+    'the-quiet-download',
+    'The Quiet Download: What Your ISP Sees When a Server Does the Torrenting',
+    'Two ways to pull the same 17 GB file across the internet - BitTorrent straight to your laptop, or a small cloud box that does the torrenting and hands you the finished file over HTTPS. The privacy difference has less to do with encryption than you''d think.',
+    'How-to No. 04',
+    'Andrew',
+    '2026-11-12',
+    8,
+    array['How-to', 'Networking', 'Privacy', 'Self-hosting']::text[],
+    array['#b23a2b']::text[],
+    'posts/the-quiet-download.json',
     true
   )
 on conflict (slug) do update set
