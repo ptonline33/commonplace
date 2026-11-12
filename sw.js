@@ -6,7 +6,7 @@
  *  - /api/*: network-only. Cloud posts and claps are live data and should
  *    never be served from a stale cache.
  */
-const VERSION = "commonplace-v3";
+const VERSION = "commonplace-v4";
 const SHELL = [
   "./",
   "index.html",

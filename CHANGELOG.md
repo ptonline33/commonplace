@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-12 — Simpler layout + hideable header
+
+- Simplified the whole UI to a flat, text-first look: removed the body gradient, card borders/shadows, decorative cover art, stat strip, topics row, about strip, tag pills, chips and the big accent clap button. Post cards are now a plain ruled list; article blocks are separated by thin rules instead of boxes.
+- The header is **no longer sticky** (`position: static`), so it scrolls away while reading a post.
+- Added a **Hide header** control (or `H`) that removes the header entirely, plus a small floating **Show header** control (or `H` / `Esc`) to restore it. The choice is persisted with the other reader prefs.
+- Adjusted TOC scroll offsets and scroll-spy thresholds for the non-fixed header.
+- Bumped `sw.js` to `commonplace-v4` so the new shell is picked up immediately.
+
 ## 2026-11-12 — Issue 04
 
 - Added **"The Quiet Download: What Your ISP Sees When a Server Does the Torrenting"** (How-to No. 04). A tech note comparing a direct BitTorrent download with a cloud box that torrents on your behalf and streams the finished file over HTTPS: what TLS hides, what the ISP still sees, the loopback hop behind a Cloudflare Tunnel, and the small serving details (URL decoding, Range support, partial-file guards) that make it work.

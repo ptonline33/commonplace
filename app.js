@@ -13,10 +13,8 @@ const state = {
   tocIds: [],
   clapCount: 0,
   clapBusy: false,
-  prefs: { font: "atkinson", size: 1.0, theme: "system" }
+  prefs: { font: "atkinson", size: 1.0, theme: "system", headerHidden: false }
 };
-
-const TOPICS = ["Field guides", "City notes", "Essays", "How-tos", "Reading lists", "Detours"];
 
 /* ------------------------------ helpers ------------------------------ */
 function esc(s) {
@@ -59,11 +57,6 @@ function fmtDate(iso) {
 }
 function store(key, val) { try { localStorage.setItem("commonplace:" + key, val); } catch (_) {} }
 function read(key) { try { return localStorage.getItem("commonplace:" + key); } catch (_) { return null; } }
-function accentOf(meta) {
-  const a = meta && meta.accent;
-  return (Array.isArray(a) ? a[0] : a) || "#b23a2b";
-}
-
 /* ------------------------------ block renderer ------------------------------ */
 function renderBlocks(blocks) {
   state.tocIds = [];
@@ -153,39 +146,17 @@ function renderVenue(v) {
 function renderHome() {
   const posts = state.catalog.filter((p) => p.published !== false);
   $("postCount").textContent = posts.length + (posts.length === 1 ? " post" : " posts");
-
-  const stats = [
-    { value: String(posts.length).padStart(2, "0"), label: posts.length === 1 ? "post and counting" : "posts and counting" },
-    { value: "12 min", label: "the flagship read" },
-    { value: "0", label: "trackers or paywalls" },
-    { value: "100%", label: "offline ready" }
-  ];
-  $("statStrip").innerHTML = stats.map((s) => `<div class="stat"><b>${esc(s.value)}</b><span>${esc(s.label)}</span></div>`).join("");
-
   if (!posts.length) {
-    $("postGrid").innerHTML = '<p class="muted">No posts yet — check back soon.</p>';
-  } else {
-    $("postGrid").innerHTML = posts.map((p, i) => {
-      const accent = accentOf(p);
-      const cover = `<div class="card-cover">
-          <span class="cover-label">Commonplace &middot; ${esc(p.kicker || "Journal")}</span>
-          <span class="cover-num">${esc(p.issue || String(i + 1).padStart(2, "0"))}</span>
-          <span class="cover-lines"><i></i><i></i><i></i></span>
-        </div>`;
-      return `<a class="post-card ${i === 0 ? "featured" : ""}" href="#/post/${esc(p.slug)}" style="--post-accent:${esc(accent)}">
-        ${cover}
-        <div class="card-body">
-          <div class="meta"><span>${esc(fmtDate(p.date))}</span><span>&middot;</span><span>${esc(p.readMinutes || 8)} min read</span></div>
-          <h3>${esc(p.title)}</h3>
-          <p>${esc(p.dek)}</p>
-          <div class="tags">${(p.tags || []).map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
-          <div class="card-cta">Read the post &rarr;</div>
-        </div>
-      </a>`;
-    }).join("");
+    $("postGrid").innerHTML = '<p class="muted">No posts yet &mdash; check back soon.</p>';
+    return;
   }
-
-  $("topicRow").innerHTML = TOPICS.map((t) => `<span class="topic">${esc(t)}</span>`).join("");
+  $("postGrid").innerHTML = posts.map((p) => `
+    <a class="post-item" href="#/post/${esc(p.slug)}">
+      <span class="post-item-meta">${esc(p.issue || "")} &middot; ${esc(fmtDate(p.date))} &middot; ${esc(p.readMinutes || 8)} min read</span>
+      <span class="post-item-title">${esc(p.title)}</span>
+      <span class="post-item-dek">${esc(p.dek)}</span>
+      <span class="post-item-more">Read &rarr;</span>
+    </a>`).join("");
 }
 
 /* ------------------------------ article ------------------------------ */
@@ -203,19 +174,10 @@ async function openPost(slug) {
   if (!meta) { toast("That post isn't in the journal yet."); location.hash = "#/"; return; }
   state.currentSlug = slug;
 
-  const head = $("articleHead");
-  head.innerHTML = `<p class="kicker">${esc(meta.kicker || "Journal")}</p>
+  $("articleHead").innerHTML = `<p class="kicker">${esc(meta.kicker || "Journal")}</p>
     <h1>${esc(meta.title)}</h1>
     <p class="dek">${esc(meta.dek)}</p>
-    <div class="byline"><span class="avatar">A</span>
-      <span><strong>${esc(meta.author || "Andrew")}</strong> &middot; ${esc(fmtDate(meta.date))} &middot; ${esc(meta.readMinutes || 8)} min read</span>
-    </div>`;
-
-  const cover = $("articleCover");
-  cover.style.setProperty("--post-accent", accentOf(meta));
-  cover.innerHTML = `<span class="cover-text">Commonplace &middot; ${esc(meta.kicker || "Journal")}</span>
-    <span class="cover-num">${esc(meta.issue || "01")}</span>
-    <span class="cover-lines"><i></i><i></i><i></i></span>`;
+    <p class="byline">${esc(meta.author || "Andrew")} &middot; ${esc(fmtDate(meta.date))} &middot; ${esc(meta.readMinutes || 8)} min read</p>`;
 
   $("articleBody").innerHTML = '<p class="muted">Loading the post&hellip;</p>';
   try {
@@ -240,20 +202,18 @@ function buildToc() {
   toc.querySelectorAll("a").forEach((a) => a.addEventListener("click", (ev) => {
     ev.preventDefault();
     const target = $(a.dataset.toc);
-    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 82, behavior: "smooth" });
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 24, behavior: "smooth" });
   }));
 }
 
 function renderArticleFoot(meta) {
   $("articleFoot").innerHTML = `
     <div class="reactions">
-      <button id="clapBtn" class="clap-btn" type="button">👏 Give it a clap</button>
+      <button id="clapBtn" class="link-btn clap-btn" type="button">&#128079; Give it a clap</button>
       <span class="clap-count" id="clapCount">0 claps</span>
-      <span class="muted" id="clapNote">Saved on this device &middot; synced when online</span>
     </div>
     <div class="article-nav">
-      <a class="pill" href="#/">&larr; All posts</a>
-      <a class="pill" href="#/about">About the journal &rarr;</a>
+      <a class="link-btn" href="#/">&larr; All posts</a>
     </div>`;
   $("clapBtn").addEventListener("click", () => clap(meta.slug));
 }
@@ -297,7 +257,6 @@ async function clap(slug) {
     if (res.ok) {
       const data = await res.json();
       if (data && typeof data.count === "number") state.clapCount = data.count;
-      if ($("clapNote")) $("clapNote").textContent = "Synced with Supabase";
       paintClaps();
     }
   } catch (_) { /* offline: the local clap is kept */ }
@@ -332,7 +291,7 @@ function updateProgress() {
     let active = state.tocIds[0].id;
     for (const t of state.tocIds) {
       const el = $(t.id);
-      if (el && el.getBoundingClientRect().top <= 130) active = t.id;
+      if (el && el.getBoundingClientRect().top <= 80) active = t.id;
     }
     $("toc").querySelectorAll("a").forEach((a) => a.classList.toggle("active", a.dataset.toc === active));
   }
@@ -370,6 +329,20 @@ function savePrefs() { store("prefs", JSON.stringify(state.prefs)); }
 function loadPrefs() {
   try { Object.assign(state.prefs, JSON.parse(read("prefs") || "{}")); } catch (_) {}
   applyPrefs();
+  applyHeaderState();
+}
+
+/* The header is optional: hide it with the button or H, restore it with the
+ * floating control, H again, or Escape. The choice is remembered. */
+function applyHeaderState() {
+  const hidden = !!state.prefs.headerHidden;
+  document.body.classList.toggle("header-hidden", hidden);
+  $("showHeaderBtn").hidden = !hidden;
+}
+function setHeaderHidden(hidden) {
+  state.prefs.headerHidden = !!hidden;
+  applyHeaderState();
+  savePrefs();
 }
 
 /* ------------------------------ router ------------------------------ */
@@ -392,7 +365,7 @@ function router() {
     openPost(postMatch[1]).then(() => {
       if (postMatch[2]) {
         const target = $(postMatch[2]);
-        if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 82, behavior: "auto" });
+        if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 24, behavior: "auto" });
       }
     });
   } else { state.currentSlug = null; updateProgress(); }
@@ -419,9 +392,17 @@ async function boot() {
   $("biggerBtn").addEventListener("click", () => { state.prefs.size = Math.min(1.6, +(state.prefs.size + 0.1).toFixed(2)); applyPrefs(); savePrefs(); });
 
   $("installBtn").addEventListener("click", doInstall);
-  $("heroInstallBtn").addEventListener("click", doInstall);
   $("shareBtn").addEventListener("click", sharePost);
   $("backBtn").addEventListener("click", () => { location.hash = "#/"; });
+  $("hideHeaderBtn").addEventListener("click", () => setHeaderHidden(true));
+  $("showHeaderBtn").addEventListener("click", () => setHeaderHidden(false));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && state.prefs.headerHidden) { setHeaderHidden(false); return; }
+    if ((e.key === "h" || e.key === "H") && !e.metaKey && !e.ctrlKey && !e.altKey &&
+        !/^(input|select|textarea)$/i.test(e.target.tagName || "")) {
+      setHeaderHidden(!state.prefs.headerHidden);
+    }
+  });
 
   window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();

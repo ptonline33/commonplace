@@ -21,78 +21,50 @@
 <body>
   <div id="readingProgress" class="reading-progress" aria-hidden="true"><span></span></div>
 
-  <header class="topbar">
-    <button id="backBtn" class="pill" type="button" hidden>&larr; Home</button>
+  <header class="topbar" id="topbar">
     <a class="brand" href="#/">Commonplace</a>
     <nav class="main-nav" aria-label="Main">
       <a class="nav-link" href="#/" data-nav="home">Journal</a>
       <a class="nav-link" href="#/about" data-nav="about">About</a>
     </nav>
     <div class="top-actions">
-      <button id="themeBtn" class="pill theme-btn" type="button" aria-label="Toggle light and dark appearance" title="Toggle appearance">◐</button>
-      <button id="installBtn" class="pill install-btn" type="button" hidden>Install app</button>
+      <button id="backBtn" class="link-btn" type="button" hidden>&larr; Home</button>
       <div class="tools" id="readerTools" hidden>
         <label class="pick"><span class="sr-only">Reading font</span>
           <select id="fontSelect" aria-label="Reading font">
-            <option value="atkinson">Atkinson (default)</option>
-            <option value="literata">Literata (book serif)</option>
+            <option value="atkinson">Atkinson</option>
+            <option value="literata">Literata</option>
             <option value="lexend">Lexend</option>
-            <option value="lora">Lora (serif)</option>
+            <option value="lora">Lora</option>
           </select>
         </label>
-        <button id="smallerBtn" class="pill size-btn" type="button" aria-label="Smaller text">A&minus;</button>
-        <button id="biggerBtn" class="pill size-btn" type="button" aria-label="Larger text">A+</button>
+        <button id="smallerBtn" class="link-btn size-btn" type="button" aria-label="Smaller text">A&minus;</button>
+        <button id="biggerBtn" class="link-btn size-btn" type="button" aria-label="Larger text">A+</button>
       </div>
-      <button id="shareBtn" class="pill" type="button" hidden>Share</button>
+      <button id="themeBtn" class="link-btn theme-btn" type="button" aria-label="Toggle light and dark appearance" title="Toggle appearance">&#9680;</button>
+      <button id="shareBtn" class="link-btn" type="button" hidden>Share</button>
+      <button id="installBtn" class="link-btn" type="button" hidden>Install</button>
+      <button id="hideHeaderBtn" class="link-btn" type="button" title="Hide the header (H)">Hide header</button>
     </div>
   </header>
+  <button id="showHeaderBtn" class="show-header" type="button" title="Show the header (H or Esc)" hidden>Show header</button>
 
   <main id="main">
     <!-- ---------- HOME ---------- -->
     <section id="homeView" class="view">
       <div class="hero">
-        <p class="eyebrow"><span class="dot"></span> A general journal</p>
-        <h1>A place for everything <span class="accent-word">worth writing down.</span></h1>
-        <p class="hero-sub">Essays, field guides, city notes and the occasional long read. No fixed beat, no niche &mdash; just things worth putting into words. First up: a practical guide to the best pool halls in the GTA.</p>
-        <div class="hero-actions">
-          <a class="btn-go" href="#/post/best-pool-halls-gta">Read the first post <span aria-hidden="true">&rarr;</span></a>
-          <button id="heroInstallBtn" class="pill" type="button">Install as app</button>
-        </div>
+        <p class="eyebrow">A general journal</p>
+        <h1>A place for everything worth writing down.</h1>
+        <p class="hero-sub">Essays, field guides, city notes and the occasional long read. No fixed beat, no niche &mdash; just things worth putting into words.</p>
       </div>
 
-      <div class="stat-strip" id="statStrip" aria-label="At a glance"></div>
-
       <div class="section-head">
-        <div>
-          <p class="kicker">From the journal &middot; November 2026</p>
-          <h2>Latest from the journal</h2>
-        </div>
+        <h2>Journal</h2>
         <span class="muted" id="postCount"></span>
       </div>
 
-      <div id="postGrid" class="post-grid" aria-live="polite">
+      <div id="postGrid" class="post-list" aria-live="polite">
         <p class="muted">Loading the journal&hellip;</p>
-      </div>
-
-      <div class="topics">
-        <div class="section-head">
-          <div>
-            <p class="kicker">No fixed beat</p>
-            <h2>What goes here</h2>
-          </div>
-          <span class="muted">Open to anything</span>
-        </div>
-        <div class="topic-row" id="topicRow"></div>
-        <p class="topic-note">The journal began with one field guide and has grown from there &mdash; city notes, how-tos, essays, reading lists and the odd detour.</p>
-      </div>
-
-      <div class="about-strip">
-        <div>
-          <p class="kicker">Why this exists</p>
-          <h2>Not every blog needs a niche.</h2>
-          <p class="muted">A commonplace book is where you keep anything worth returning to. This is that, on the web: researched guides, small observations and longer reads, published one at a time. It installs on your phone and works with no signal.</p>
-        </div>
-        <a class="pill" href="#/about">More about the journal &rarr;</a>
       </div>
     </section>
 
@@ -102,7 +74,6 @@
         <aside class="toc" id="toc" aria-label="On this page"></aside>
         <article class="article-wrap">
           <header class="article-head" id="articleHead"></header>
-          <div class="cover" id="articleCover" aria-hidden="true"></div>
           <div id="articleBody" class="article"></div>
           <div class="article-foot" id="articleFoot"></div>
         </article>
@@ -112,8 +83,8 @@
     <!-- ---------- ABOUT ---------- -->
     <section id="aboutView" class="view" hidden>
       <div class="prose-card">
-        <p class="eyebrow"><span class="dot"></span> About the journal</p>
-        <h1>A notebook with <span class="accent-word">no assigned subject.</span></h1>
+        <p class="eyebrow">About the journal</p>
+        <h1>A notebook with no assigned subject.</h1>
         <p class="lead">Commonplace is a small independent blog for anything worth writing down. The first post happens to be a field guide to pool halls in the Greater Toronto Area, but the journal itself is deliberately general: essays, city notes, how-tos, reading lists and detours.</p>
         <h2>What you&rsquo;ll find here</h2>
         <ul>
@@ -123,13 +94,8 @@
           <li><strong>Honest caveats</strong> &mdash; a source list and a reminder that details change.</li>
         </ul>
         <h2>Built as a PWA</h2>
-        <p>The journal installs on your phone or desktop, works offline, follows your system light/dark preference, and remembers your reading font and text size. Posts ship with the app, so the whole thing is available on the subway with no signal.</p>
-        <div class="tech-row">
-          <span class="chip">GitHub</span><span class="chip">Vercel</span><span class="chip">Supabase</span>
-          <span class="chip">Atkinson Hyperlegible</span><span class="chip">Literata</span><span class="chip">Offline first</span>
-        </div>
-        <p class="muted small">Posts live as JSON in the repository. When connected, published posts and reader claps sync through Supabase, with a local cache so nothing breaks when you&rsquo;re offline.</p>
-        <a class="btn-go" href="#/">&larr; Back to the journal</a>
+        <p>The journal installs on your phone or desktop, works offline, follows your system light/dark preference, and remembers your reading font and text size. Posts ship with the app, so the whole thing is available with no signal.</p>
+        <a class="link-btn" href="#/">&larr; Back to the journal</a>
       </div>
     </section>
   </main>

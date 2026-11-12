@@ -6,12 +6,13 @@ A small, offline-first **general blog PWA**. The journal has no niche: essays, f
 
 ## Visual language
 
-A fresh editorial light/dark theme with a single oxide-red accent:
+A quiet, text-first editorial light/dark theme:
 
 - **Light** warm paper `#f7f5f0` / ink `#1b1c20`; **dark** charcoal `#141518` / cream `#f5f3ee`.
-- One accent colour (`#b23a2b` light, `#f08068` dark) used for links, rules, buttons and active states.
+- Flat surfaces, thin rules and one accent colour (`#b23a2b` light, `#f08068` dark). No cards, shadows, gradients or decorative cover art.
 - **Atkinson Hyperlegible** for UI + **Literata** for display headings, with Lexend/Lora as reader options. All fonts are self-hosted `.woff2` files from the Readalong project, so the PWA works with no network.
 - Follows the OS light/dark preference, with a manual toggle in the header that persists.
+- The header is **not fixed** — it scrolls away while reading. Use **Hide header** (or `H`) to remove it entirely; a small floating **Show header** control, `H` again, or `Esc` brings it back. The choice persists.
 
 ## What's inside
 
