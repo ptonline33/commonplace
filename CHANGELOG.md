@@ -1,9 +1,8 @@
 # Changelog
 
-## 2026-11-15 — Issue 05: Disney+ 3D titles on Meta Quest
+## 2026-11-15 — Revert Issue 05 (posted to the wrong app)
 
-- Added **"Disney+ in 3D: The Movies You Can Watch on Meta Quest"** (Viewing Notes No. 05): the titles Disney and Meta have officially named, grouped by franchise; the wider set reported by launch coverage; and the fine print on devices, regions, plans, Environments vs 3D, IMAX Enhanced and the separate Quest TV rental store. Includes a source list.
-- Registered in `posts/index.json`, precached in `sw.js` (bumped `VERSION` to `commonplace-v5`).
+- Removed the "Disney+ in 3D" post and its catalog entry. It was published here by mistake; the requested destination was the **notes-app** PWA on Vercel, where the list now lives as a synced note. Bumped `VERSION` to `commonplace-v6` so installed copies drop the old precache.
 
 ## 2026-11-12 — Simpler layout + hideable header
 
