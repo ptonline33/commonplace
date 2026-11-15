@@ -1,0 +1,211 @@
+{
+  "slug": "disney-plus-3d-titles",
+  "title": "Disney+ in 3D: The Movies You Can Watch on Meta Quest",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "On November 10, 2026, the Disney+ app on Meta Quest stopped being a flat screen in a virtual room. More than 60 movies gained a stereoscopic 3D option, and a set of themed environments arrived with them. Here is what is actually in the 3D catalogue, what is only reported, and the fine print that decides whether a title plays for you."
+    },
+    {
+      "type": "p",
+      "text": "Disney+ first landed on Quest on December 15, 2025, but it streamed everything in 2D. The 3D treatment had been an Apple Vision Pro exclusive since early 2024. This update closes that gap for Quest 3 and 3S, and the same feature is promised for Meta VR Glasses when they launch in spring 2027."
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "icon": "\u2713",
+      "title": "Finding them",
+      "text": "Open Disney+ on the headset and look under your profile for the **3D** tab (or the 3D collection in the navigation). Pick a title and press play - 3D starts automatically. It is included with a Disney+ subscription; Dolby Vision and Dolby Atmos depend on the title, your plan and your country."
+    },
+    {
+      "type": "stats",
+      "items": [
+        { "value": "60+", "label": "3D movies at launch" },
+        { "value": "Nov 10", "label": "2026 rollout" },
+        { "value": "2", "label": "headsets: Quest 3, 3S" },
+        { "value": "2027", "label": "Meta VR Glasses follow-up" }
+      ]
+    },
+    {
+      "type": "h2",
+      "id": "confirmed",
+      "text": "The titles Disney and Meta have named"
+    },
+    {
+      "type": "p",
+      "text": "Disney has not published a complete catalogue of the 60-plus films. These are the ones named on Disney's own Quest page or in Meta's launch post, so they are the safe bets. Grouped by franchise:"
+    },
+    {
+      "type": "h3",
+      "text": "Avatar (all three)"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "*Avatar* (2009)",
+        "*Avatar: The Way of Water*",
+        "*Avatar: Fire and Ash*"
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Marvel"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "*The Avengers*",
+        "*Black Panther*",
+        "*Avengers: Endgame*",
+        "*The Fantastic Four: First Steps*"
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Star Wars"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "*Rogue One: A Star Wars Story*",
+        "*Star Wars: The Force Awakens*"
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Tron and sci-fi"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "*Tron: Legacy*",
+        "*Tron: Ares*"
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Pixar"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "*Inside Out 2*",
+        "*Elemental*"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "If you only watch one thing, make it *Avatar: The Way of Water*. It was photographed for theatrical 3D rather than converted afterwards, so the underwater sequences are the clearest demonstration of what a headset adds. *Tron: Legacy* is the stylized alternative, and *Avengers: Endgame* or *Rogue One* are the scale picks."
+    },
+    {
+      "type": "h2",
+      "id": "reported",
+      "text": "Also reported in the launch coverage"
+    },
+    {
+      "type": "p",
+      "text": "Press and community listings go well beyond Disney's sample list. These appeared in coverage from PCMag, Engadget, UploadVR, Polygon, FlatpanelsHD and in a community catalogue of the in-app 3D tab - but they are not on Disney's official sample list, so treat them as leads rather than guarantees."
+    },
+    {
+      "type": "h3",
+      "text": "More Marvel"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "*Avengers: Infinity War* and *Avengers: Age of Ultron*",
+        "*Black Panther: Wakanda Forever*",
+        "*Black Widow*",
+        "*Captain America: Civil War* and *Captain America: Brave New World*",
+        "*Captain Marvel*",
+        "*Doctor Strange* and *Doctor Strange in the Multiverse of Madness*",
+        "*Ant-Man*, *Ant-Man and the Wasp* and *Ant-Man and the Wasp: Quantumania*",
+        "*Deadpool & Wolverine*",
+        "*Thunderbolts*",
+        "The *Guardians of the Galaxy* trilogy"
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "More Star Wars"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "*Star Wars: The Last Jedi* (Episode VIII)",
+        "*Star Wars: The Rise of Skywalker* (Episode IX)",
+        "*The Mandalorian and Grogu*"
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Disney, Pixar and live-action"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "*Toy Story 5*",
+        "*Mufasa: The Lion King*",
+        "*Free Guy*",
+        "*Encanto*",
+        "*Beauty and the Beast* (2017 live action)",
+        "*Aladdin* (2019 live action)",
+        "*The Lion King* (2019) and *The Little Mermaid* (live action)"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Polygon reported that five of the six most recent Star Wars films now have 3D versions - Episodes VII through IX, *Rogue One* and *The Mandalorian and Grogu* - and that *A New Hope* is expected later, possibly around its 50th anniversary in February 2027."
+    },
+    {
+      "type": "h2",
+      "id": "fine-print",
+      "text": "The fine print"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "**Devices.** Disney's own page lists 3D playback for Quest 3 and 3S; Quest 2 gets 2D plus the themed environments. Some outlets report Quest 2 support too, so check your own app before planning around it.",
+        "**Region and plan.** Meta says *select countries*, and Disney warns that some titles shown may not be 3D in your country. Coverage confirmed the US, UK and Japan, with a Disney+ Premium subscription required in at least some markets. Europe has separate restrictions on 3D and Dolby Vision.",
+        "**Environments are not 3D.** Tatooine, Avengers Tower, the Monsters, Inc. Scare Floor, an Alien-themed room, an Iceland vista and a theatre are viewing spaces that work with ordinary 2D playback as well. Do not confuse a themed room with a stereoscopic film.",
+        "**IMAX Enhanced is a different thing.** *Avengers: Endgame*, *Lightyear* and *Tron: Ares* are named as IMAX Enhanced examples for Meta VR Glasses in spring 2027, not for today's Quest 3D stream.",
+        "**Two different storefronts.** Disney+ 3D is included with the subscription. The separate rent-or-buy 3D titles in the Quest TV app (for example the Billie Eilish concert film *Hit Me Hard and Soft: The Tour*) are a different product.",
+        "**The full list is not public.** 60-plus is the count Meta gave; Disney has not published the catalogue, and availability will change. Be sceptical of unofficial 60-title spreadsheets."
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "icon": "!",
+      "title": "Check before you settle in",
+      "text": "Open the 3D tab on your own headset and look at a title's Details tab for its listed formats. What is available to you depends on your country, your subscription tier and the device - not on any list, including this one."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "h2",
+      "id": "bottom-line",
+      "text": "The bottom line"
+    },
+    {
+      "type": "p",
+      "text": "The reliably confirmed set is small and strong: three *Avatar* films, four Marvel titles, two Star Wars films, both *Tron* films and two Pixar features. Everything else in the 60-plus count is a rotating, region-dependent catalogue that Disney has not written down. Start with the Avatar trilogy, then let the 3D tab tell you what else is actually there."
+    },
+    {
+      "type": "sources",
+      "title": "Sources",
+      "items": [
+        { "label": "Meta Quest Blog - Disney+ 3D movies and immersive environments (Nov 10, 2026)", "url": "https://www.meta.com/blog/disney-plus-3d-content-immersive-environments-upgrade-launch/" },
+        { "label": "Disney+ - Your Disney+ Movie Night Goes 3D On Meta Quest (revised Nov 10, 2026)", "url": "https://www.disneyplus.com/explore/articles/meta-quest-disney-plus" },
+        { "label": "UploadVR - Disney+ App Update Brings 3D Movies & Immersive Environments To Quest", "url": "https://www.uploadvr.com/disney-app-update-brings-3d-movies-immersive-environments-to-quest-vr-glasses/" },
+        { "label": "PCMag - Disney+ Brings 3D Movies to Meta Quest, 60+ Titles Ready to Watch Now", "url": "https://www.pcmag.com/news/disney-plus-brings-3d-movies-to-meta-quest-60-plus-titles-ready-to-watch" },
+        { "label": "The Verge - The VR Disney Plus app on Meta Quest now has 3D movies", "url": "https://www.theverge.com/tech/1031256/meta-quest-disney-plus-vr-3d-movies" },
+        { "label": "Engadget - The Disney+ App On Meta Quest Now Includes 3D Movies", "url": "https://www.engadget.com/2312296/the-disney-app-on-meta-quest-now-includes-3d-movies/" },
+        { "label": "FlatpanelsHD - 3D movies now rolling out to Meta Quest", "url": "https://www.flatpanelshd.com/news.php?id=1794384720&subaction=showfull" },
+        { "label": "Polygon - Disney Plus officially adds new versions of several Star Wars films", "url": "https://www.polygon.com/star-wars-3d-meta-quest-version-disney-plus" },
+        { "label": "MetaverseWatcher - Best Disney+ 3D Movies to Watch on Quest 3", "url": "https://www.metaversewatcher.io/best-disney-plus-3d-movies-quest-3" }
+      ]
+    }
+  ]
+}

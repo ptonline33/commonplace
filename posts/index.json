@@ -60,6 +60,20 @@
       "accent": ["#b23a2b"],
       "file": "posts/the-quiet-download.json",
       "published": true
+    },
+    {
+      "slug": "disney-plus-3d-titles",
+      "issue": "05",
+      "title": "Disney+ in 3D: The Movies You Can Watch on Meta Quest",
+      "dek": "More than 60 movies gained a 3D option on November 10, 2026. Here are the ones Disney and Meta have actually named, the ones only reported by the press, and the fine print on regions, plans and headsets.",
+      "kicker": "Viewing Notes No. 05",
+      "date": "2026-11-15",
+      "author": "Andrew",
+      "readMinutes": 8,
+      "tags": ["Viewing Notes", "Disney+", "Meta Quest", "3D Movies"],
+      "accent": ["#b23a2b"],
+      "file": "posts/disney-plus-3d-titles.json",
+      "published": true
     }
   ]
 }

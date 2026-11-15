@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-15 — Issue 05: Disney+ 3D titles on Meta Quest
+
+- Added **"Disney+ in 3D: The Movies You Can Watch on Meta Quest"** (Viewing Notes No. 05): the titles Disney and Meta have officially named, grouped by franchise; the wider set reported by launch coverage; and the fine print on devices, regions, plans, Environments vs 3D, IMAX Enhanced and the separate Quest TV rental store. Includes a source list.
+- Registered in `posts/index.json`, precached in `sw.js` (bumped `VERSION` to `commonplace-v5`).
+
 ## 2026-11-12 — Simpler layout + hideable header
 
 - Simplified the whole UI to a flat, text-first look: removed the body gradient, card borders/shadows, decorative cover art, stat strip, topics row, about strip, tag pills, chips and the big accent clap button. Post cards are now a plain ruled list; article blocks are separated by thin rules instead of boxes.
